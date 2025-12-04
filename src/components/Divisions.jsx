@@ -65,18 +65,68 @@ const divisions = [
     }
 ];
 
+// Marquee Component
+const MarqueeSection = () => {
+    const marqueeItems = [
+        "Excellence in Education",
+        "Holistic Development",
+        "21st Century Skills",
+        "World-Class Faculty",
+        "State-of-the-Art Infrastructure",
+        "Global Curriculum",
+        "Individual Attention",
+        "Innovation & Creativity"
+    ];
+
+    return (
+        <div className="w-full overflow-hidden bg-gradient-to-r from-primary to-primary/90 py-4 mb-12 relative">
+            {/* Gradient Overlays for fade effect */}
+            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-primary to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-primary to-transparent z-10 pointer-events-none" />
+            
+            <div className="relative flex overflow-hidden">
+                {/* First marquee */}
+                <div className="flex animate-marquee whitespace-nowrap">
+                    {marqueeItems.map((item, index) => (
+                        <span
+                            key={`first-${index}`}
+                            className="mx-6 text-[16px] md:text-[20px] font-bold text-white font-serif flex items-center"
+                        >
+                            {item}
+                            <span className="mx-6 text-secondary">✦</span>
+                        </span>
+                    ))}
+                </div>
+                
+                {/* Duplicate marquee for seamless loop */}
+                <div className="absolute top-0 flex animate-marquee2 whitespace-nowrap">
+                    {marqueeItems.map((item, index) => (
+                        <span
+                            key={`second-${index}`}
+                            className="mx-6 text-[16px] md:text-[20px] font-bold text-white font-serif flex items-center"
+                        >
+                            {item}
+                            <span className="mx-6 text-secondary">✦</span>
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+};
+
 const Divisions = () => {
     const [activeId, setActiveId] = useState('preschool');
 
     return (
-        <section id="academics" className="py-24 bg-background relative overflow-hidden min-h-[800px] flex flex-col">
+        <section id="academics" className="pb-24 bg-background relative overflow-hidden min-h-[800px] flex flex-col">
             {/* Decorative Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            {/* <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
                 <div className="absolute top-1/2 -left-24 w-64 h-64 bg-secondary/5 rounded-full blur-3xl" />
-            </div>
+            </div> */}
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12 w-full">
+            {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12 w-full">
                 <div className="text-center">
                     <motion.span
                         initial={{ opacity: 0, y: 10 }}
@@ -105,7 +155,10 @@ const Divisions = () => {
                         We offer a seamless educational journey tailored to every stage of a child's development.
                     </motion.p>
                 </div>
-            </div>
+            </div> */}
+
+            {/* Marquee Section */}
+            <MarqueeSection />
 
             <div className="flex-1 w-full max-w-[1400px] mx-auto px-4 flex flex-col md:flex-row gap-4 md:gap-4 min-h-[800px] md:h-[600px] pb-12">
                 {divisions.map((div) => (

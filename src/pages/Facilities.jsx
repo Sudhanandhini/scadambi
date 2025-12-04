@@ -7,9 +7,9 @@ const Facilities = () => {
         { icon: FlaskConical, title: "Science Labs", desc: "Modern Physics, Chemistry, and Biology labs equipped with the latest apparatus for practical learning." },
         { icon: Library, title: "Library", desc: "A vast collection of 10,000+ books, journals, and digital resources to fuel curiosity." },
         { icon: Monitor, title: "Computer Lab", desc: "High-tech computer labs with high-speed internet and latest software for coding and design." },
-        { icon: Trophy, title: "Sports Complex", desc: "Expansive playground, basketball court, and indoor sports arena for holistic physical development." },
-        { icon: Bus, title: "Transport", desc: "Safe and GPS-enabled bus fleet covering all major routes in the city with trained attendants." },
-        { icon: Music, title: "Arts & Music", desc: "Dedicated studios for dance, music, and fine arts to nurture creative talents." }
+        // { icon: Trophy, title: "Sports Complex", desc: "Expansive playground, basketball court, and indoor sports arena for holistic physical development." },
+        // { icon: Bus, title: "Transport", desc: "Safe and GPS-enabled bus fleet covering all major routes in the city with trained attendants." },
+        // { icon: Music, title: "Arts & Music", desc: "Dedicated studios for dance, music, and fine arts to nurture creative talents." }
     ];
 
     return (
