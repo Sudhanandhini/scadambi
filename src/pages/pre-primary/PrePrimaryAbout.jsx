@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Users, Award, Target, Eye, Lightbulb, GraduationCap, Sparkles } from 'lucide-react';
+import prin from "../../assets/pre-primary/Picture1.jpg";
+import prin1 from "../../assets/pre-primary/Picture2.jpg";
 
 const PrePrimaryAbout = () => {
     const values = [
@@ -26,19 +28,31 @@ const PrePrimaryAbout = () => {
         }
     ];
 
-    const faculty = [
-        { name: "Mrs. Sunitha V", position: "Principal" },
-        { name: "Mrs. Asha T", position: "Vice Principal" },
-        { name: "Mrs. Nikitha M.S", position: "Teacher" },
-        { name: "Mrs. Priyanka B. Navalgund", position: "Teacher" },
-        { name: "Mrs. Radhika R. V.", position: "Teacher" },
-        { name: "Mrs. Shailashree S Jawali", position: "Teacher" },
-        { name: "Mrs. Aswini S", position: "Teacher" },
-        { name: "Mrs. Soumya", position: "Teacher" },
-        { name: "Mrs. K. Swetha", position: "Teacher" },
-        { name: "Mrs. Kunjurani", position: "Physical Education Instructor" },
-        { name: "Mrs. Pallavi B. N", position: "Teacher" },
-        { name: "Mrs. Geetha Hegde", position: "Teacher" }
+    // Faculty – row-wise text for the photo
+    const facultyLines = [
+        {
+            label: "First line – L to R",
+            names: "Mrs. Nikitha M.S, Mrs. Priyanka B. Navalgund, Mrs. Radhika R. V., Mrs. Sunitha V (Principal), Mrs. Asha T (Vice Principal)"
+        },
+        {
+            label: "Second line – L to R",
+            names: "Mrs. Shailashree S Jawali, Mrs. Aswini S, Mrs. Soumya, Mrs. K. Swetha"
+        },
+        {
+            label: "Third line – L to R",
+            names: "Mrs. Kunjurani, Mrs. Pallavi B. N, Mrs. Geetha Hegde"
+        }
+    ];
+
+    // Supporting staff list
+    const supportingStaff = [
+        "Mrs. Lakshmamma",
+        "Mrs. Rathnamma H D",
+        "Mrs. Padma",
+        "Mrs. Pushpa M S",
+        "Mrs. Roopa M",
+        "Mrs. Savitha V",
+        "Mrs. Gowramma N"
     ];
 
     return (
@@ -111,7 +125,17 @@ const PrePrimaryAbout = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-8">
+
+                        {/* Principal image with padding / margin / size */}
+                        <div className="px-8 pb-8">
+                            <img
+                                src={prin}
+                                alt="Principal - Mrs. Sunitha V"
+                                className="w-full max-w-3xl mx-auto mt-[20px] rounded-3xl shadow-xl object-cover max-h-[680px]"
+                            />
+                        </div>
+
+                        <div className="p-8 pt-0">
                             <p className="text-gray-700 text-lg leading-relaxed mb-4">
                                 <strong>Namaste,</strong>
                             </p>
@@ -173,15 +197,15 @@ const PrePrimaryAbout = () => {
                     </div>
                 </motion.section>
 
-                {/* Faculty Section */}
+                {/* Faculty + Supporting Staff */}
                 <motion.section
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="mb-20"
                 >
-                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-12 border-2 border-blue-200">
-                        <div className="text-center mb-12">
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 md:p-12 border-2 border-blue-200">
+                        <div className="text-center mb-10">
                             <Sparkles className="text-blue-600 mx-auto mb-4" size={48} />
                             <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mb-4">
                                 Our Dedicated Faculty
@@ -191,36 +215,54 @@ const PrePrimaryAbout = () => {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {faculty.map((member, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: idx * 0.05 }}
-                                    className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all"
-                                >
-                                    <div className="flex items-center">
-                                        <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                            <Users className="text-blue-600" size={24} />
-                                        </div>
-                                        <div>
-                                            <h3 className="font-bold text-primary">{member.name}</h3>
-                                            <p className="text-sm text-gray-600">{member.position}</p>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                        <div className="flex flex-col lg:flex-row gap-10 items-start">
+                            {/* Group photo + row-wise text */}
+                            <div className="lg:w-2/3 w-full">
+                                <img
+                                    src={prin1}
+                                    alt="Pre-primary faculty group"
+                                    className="w-full rounded-3xl shadow-xl object-cover max-h-[520px]"
+                                />
 
-                        <div className="mt-12 text-center">
-                            <div className="bg-white rounded-xl p-6 shadow-lg max-w-2xl mx-auto">
-                                <Heart className="text-secondary mx-auto mb-4" size={40} />
-                                <h3 className="text-2xl font-bold text-primary mb-3">Supporting Staff</h3>
-                                <p className="text-gray-700 leading-relaxed">
-                                    A school without the contribution of supporting staff cannot be successful. We have caring, loving, kind, committed and selfless supporting staff with whom our children feel very comfortable.
-                                </p>
+                                <div className="mt-6 space-y-2 text-gray-800 text-sm md:text-base">
+                                    {facultyLines.map((line, index) => (
+                                        <p key={index}>
+                                            <span className="font-semibold">{line.label}: </span>
+                                            {line.names}
+                                        </p>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Supporting staff card with names */}
+                            <div className="lg:w-1/3 w-full">
+                                <div className="bg-white rounded-xl p-6 shadow-lg">
+                                    <Heart className="text-secondary mx-auto mb-4" size={40} />
+                                    <h3 className="text-2xl font-bold text-primary mb-3 text-center">
+                                        Supporting Staff
+                                    </h3>
+                                    <p className="text-gray-700 leading-relaxed text-sm mb-4">
+                                        A school without the contribution of supporting staff cannot be successful.
+                                        We have caring, loving, kind, committed and selfless supporting staff with whom
+                                        our children feel very comfortable.
+                                    </p>
+
+                                    {/* Table like in your screenshot */}
+                                    <table className="w-full border border-gray-300 text-sm">
+                                        <tbody>
+                                            {supportingStaff.map((name, idx) => (
+                                                <tr key={idx}>
+                                                    <td className="border border-gray-300 px-3 py-2 text-center w-12">
+                                                        {idx + 1}
+                                                    </td>
+                                                    <td className="border border-gray-300 px-3 py-2">
+                                                        {name}
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -241,12 +283,19 @@ const PrePrimaryAbout = () => {
                             Give your child the best start in their educational journey
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <button className="bg-secondary hover:bg-secondary/90 text-primary font-bold px-8 py-4 rounded-lg transition-all transform hover:scale-105 shadow-lg">
-                                Schedule Campus Visit
-                            </button>
-                            <button className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-bold px-8 py-4 rounded-lg transition-all border-2 border-white/30">
-                                Download Prospectus
-                            </button>
+                            <a
+                                href="/scadambi/pre-primary/activities"
+                                className="bg-secondary hover:bg-secondary/90 text-primary font-bold px-8 py-4 rounded-lg transition-all transform hover:scale-105 shadow-lg inline-block"
+                            >
+                                Campus Activities
+                            </a>
+
+                            <a
+                                href="/scadambi/pre-primary/facilities"
+                                className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-bold px-8 py-4 rounded-lg transition-all border-2 border-white/30 inline-block"
+                            >
+                                Learn More
+                            </a>
                         </div>
                     </div>
                 </motion.div>

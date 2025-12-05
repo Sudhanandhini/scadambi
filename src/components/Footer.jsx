@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Heart } from 'lucide-react';
 import logo from '../assets/images/logo.png';
 
 const Footer = () => {
@@ -29,32 +29,56 @@ const Footer = () => {
                     </div>
 
                     {/* Quick Links */}
-                    <div>
-                        <h4 className="text-lg font-bold mb-6 text-secondary">Quick Links</h4>
-                        <ul className="space-y-3">
-                            {['About Us', 'Admissions', 'Academics', 'Campus Life', 'Careers', 'Contact'].map((link) => (
-                                <li key={link}>
-                                    <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors">
-                                        {link}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                  <div>
+    <h4 className="text-lg font-bold mb-6 text-secondary">Quick Links</h4>
+
+    <ul className="space-y-3">
+        {[
+            { name: 'About Us', link: '/about' },
+            { name: 'Admissions', link: '/admissions' },
+            { name: 'Academics', link: '/academics' },
+            { name: 'Campus Life', link: '/campus-life' },
+            { name: 'Careers', link: '/careers' },
+            { name: 'Contact', link: '/contact' },
+        ].map((item) => (
+            <li key={item.name}>
+                <a 
+                    href={item.link} 
+                    className="text-gray-300 hover:text-white text-sm transition-colors"
+                >
+                    {item.name}
+                </a>
+            </li>
+        ))}
+    </ul>
+</div>
+
 
                     {/* Divisions */}
-                    <div>
-                        <h4 className="text-lg font-bold mb-6 text-secondary">Our Divisions</h4>
-                        <ul className="space-y-3">
-                            {['Pre-School', 'Primary School', 'High School', 'PU College'].map((link) => (
-                                <li key={link}>
-                                    <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors">
-                                        {link}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                   <div>
+    <h4 className="text-lg font-bold mb-6 text-secondary">Our Divisions</h4>
+
+    <ul className="space-y-3">
+        {[
+            { name: 'SHISHU CHAITANYA-PLAY HOME', link: '/scadambi/preschool' },
+            { name: 'Pre Primary', link: '/scadambi/pre-primary' },
+            { name: 'ICSE PRIMARY WING', link: '/scadambi/high-school' },
+            { name: 'ICSE HIGH SCHOOL WING', link: '/scadambi/pu-college' },
+            { name: ' State High School ', link: '/scadambi/high-school' },
+            { name: 'PU COLLEGE', link: '/scadambi/pu-college' },
+        ].map((item) => (
+            <li key={item.name}>
+                <a 
+                    href={item.link} 
+                    className="text-gray-300 hover:text-white text-sm transition-colors"
+                >
+                    {item.name}
+                </a>
+            </li>
+        ))}
+    </ul>
+</div>
+
 
                     {/* Contact Info */}
                     <div>
@@ -77,11 +101,36 @@ const Footer = () => {
 
                 </div>
 
-                <div className="border-t border-white/10 pt-8 text-center">
-                    <p className="text-gray-400 text-sm">
-                        © {new Date().getFullYear()} S. Cadambi Vidya Kendra. All rights reserved.
-                    </p>
+             
+
+                <div className="border-t border-white/10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80">
+
+                        <p className="flex items-center">
+                            © 2025 S. Cadambi Pre-Primary Wing. All rights reserved.
+                        </p>
+
+                        <div className="flex items-center space-x-6">
+
+                            <a
+                                href="https://www.sunsys.in/"
+                                className="flex items-center hover:text-white transition"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Made with
+                                <Heart className="mx-1 text-secondary" size={16} fill="currentColor" />
+                                by Sunsys Technologies
+                            </a>
+
+                        </div>
+
+                    </div>
                 </div>
+            </div>
+
+
             </div>
         </footer>
     );

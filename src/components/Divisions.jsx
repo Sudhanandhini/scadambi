@@ -16,25 +16,28 @@ const divisions = [
         description: 'Sparking curiosity through play-based learning in a nurturing environment.',
         icon: Baby,
         color: 'from-blue-400 to-blue-600',
-        image: preschoolImg
+        image: preschoolImg,
+        link: '/pre-school'
     },
     {
         id: 'primary',
-        title: 'Primary School',
+        title: 'S.Cadambi Education Center Pre Primary School',
         age: 'Grades 1-7',
-        description: 'Building strong foundations with a blend of academics and creativity.',
+        description: 'Sowing seeds of Knowledge for Success',
         icon: BookOpen,
         color: 'from-green-400 to-green-600',
-        image: primaryImg
+        image: primaryImg,
+        link: 'scadambi/pre-primary'
     },
     {
         id: 'highschool',
-        title: 'High School',
+        title: 'S.Cadambi Vidya Kendra High School',
         age: 'Grades 8-10',
-        description: 'Fostering critical thinking and preparing leaders for the future.',
+        description: 'Jnanam Paramam Balam',
         icon: School,
         color: 'from-orange-400 to-orange-600',
-        image: highschoolImg
+        image: highschoolImg,
+        link: 'scadambi/high-school'
     },
     {
         id: 'college',
@@ -43,7 +46,8 @@ const divisions = [
         description: 'Expert guidance for competitive exams and career excellence.',
         icon: GraduationCap,
         color: 'from-red-500 to-red-700',
-        image: collegeImg
+        image: collegeImg,
+        link: '/pre-school'
     },
     {
         id: 'sports',
@@ -52,7 +56,8 @@ const divisions = [
         description: 'Developing physical fitness, teamwork, and sportsmanship through world-class coaching.',
         icon: Trophy,
         color: 'from-yellow-400 to-yellow-600',
-        image: sportsImg
+        image: sportsImg,
+        link: '/pre-school'
     },
     {
         id: 'arts',
@@ -61,7 +66,8 @@ const divisions = [
         description: 'Unleashing creativity through music, dance, visual arts, and drama.',
         icon: Palette,
         color: 'from-purple-400 to-purple-600',
-        image: 'https://images.unsplash.com/photo-1460661619275-dbea996984c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1460661619275-dbea996984c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        link: '/pre-school'
     }
 ];
 
@@ -83,7 +89,7 @@ const MarqueeSection = () => {
             {/* Gradient Overlays for fade effect */}
             <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-primary to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-primary to-transparent z-10 pointer-events-none" />
-            
+
             <div className="relative flex overflow-hidden">
                 {/* First marquee */}
                 <div className="flex animate-marquee whitespace-nowrap">
@@ -97,7 +103,7 @@ const MarqueeSection = () => {
                         </span>
                     ))}
                 </div>
-                
+
                 {/* Duplicate marquee for seamless loop */}
                 <div className="absolute top-0 flex animate-marquee2 whitespace-nowrap">
                     {marqueeItems.map((item, index) => (
@@ -226,10 +232,17 @@ const Divisions = () => {
                                         <p className="text-gray-100 text-base md:text-lg leading-relaxed mb-6 max-w-xl">
                                             {div.description}
                                         </p>
-                                        <div className="flex items-center text-secondary font-bold text-sm tracking-wide gap-2 group cursor-pointer w-fit">
-                                            EXPLORE PROGRAM
-                                            <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                                        </div>
+                                        <a
+                                            href={div.link}
+                                            className="flex items-center text-secondary font-bold text-sm tracking-wide gap-2 group w-fit"
+                                        >
+                                            <span>EXPLORE PROGRAM</span>
+                                            <ArrowUpRight
+                                                size={18}
+                                                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                                            />
+                                        </a>
+
                                     </motion.div>
                                 )}
                             </AnimatePresence>

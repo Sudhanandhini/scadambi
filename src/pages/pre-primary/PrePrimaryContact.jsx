@@ -175,7 +175,7 @@ const PrePrimaryContact = () => {
                     viewport={{ once: true }}
                 >
                     <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-                        <iframe 
+                        {/* <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.7584892638744!2d77.53751!3d12.99316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU5JzM1LjQiTiA3N8KwMzInMTUuMSJF!5e0!3m2!1sen!2sin!4v1234567890"
                             width="100%"
                             height="450"
@@ -184,7 +184,13 @@ const PrePrimaryContact = () => {
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                             title="School Location"
-                        ></iframe>
+                        ></iframe> */}
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d775.2886857829224!2d77.53933029850626!3d12.99258234578071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sen!2sin!4v1764911445399!5m2!1sen!2sin"
+                         width="100%" height="450"  style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="School Location"></iframe>
                     </div>
                 </motion.section>
             </div>

@@ -8,19 +8,23 @@ const PrePrimaryFooter = () => {
         { name: 'Academic', path: '/pre-primary/academic' },
         { name: 'Admissions', path: '/pre-primary/admissions' },
         { name: 'Facilities', path: '/pre-primary/facilities' },
+        { name: 'Activities', path: '/pre-primary/activities' },
+        { name: 'News & Events', path: '/pre-primary/news' },
         { name: 'Contact Us', path: '/pre-primary/contact' }
     ];
 
     const programs = [
-        { name: 'Pre-KG (3-4 years)', path: '/pre-primary/academic' },
-        { name: 'LKG (4-5 years)', path: '/pre-primary/academic' },
-        { name: 'UKG (5-6 years)', path: '/pre-primary/academic' },
-        { name: 'Activities', path: '/pre-primary/activities' },
-        { name: 'News & Events', path: '/pre-primary/news' }
+        { name: 'SHISHU CHAITANYA-PLAY HOME', link: '/scadambi/preschool' },
+        { name: 'Pre Primary', link: '/scadambi/pre-primary' },
+        { name: 'ICSE PRIMARY WING', link: '/scadambi/high-school' },
+        { name: 'ICSE HIGH SCHOOL WING', link: '/scadambi/pu-college' },
+        { name: ' STATE HIGH SCHOOL ', link: '/scadambi/pu-college' },
+        { name: 'PU COLLEGE', link: '/scadambi/pu-college' },
+
     ];
 
     return (
-        <footer className="bg-gradient-to-br from-primary to-primary/95 text-white">
+        <footer className="bg-[#009053]  text-white">
             {/* Main Footer */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -39,7 +43,7 @@ const PrePrimaryFooter = () => {
                             Nurturing young minds through play-based learning. "Sowing Seeds of Knowledge for Success"
                         </p>
                         <div className="flex items-center space-x-4">
-                            <a 
+                            <a
                                 href="https://www.facebook.com/profile.php?id=100095136330780"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -56,7 +60,7 @@ const PrePrimaryFooter = () => {
                         <ul className="space-y-3">
                             {quickLinks.map((link, idx) => (
                                 <li key={idx}>
-                                    <Link 
+                                    <Link
                                         to={link.path}
                                         className="flex items-center text-white/90 hover:text-secondary transition-colors group"
                                     >
@@ -70,11 +74,11 @@ const PrePrimaryFooter = () => {
 
                     {/* Programs */}
                     <div>
-                        <h3 className="text-xl font-bold mb-6 text-secondary">Our Programs</h3>
+                        <h3 className="text-xl font-bold mb-6 text-secondary">Our Divisions</h3>
                         <ul className="space-y-3">
                             {programs.map((link, idx) => (
                                 <li key={idx}>
-                                    <Link 
+                                    <Link
                                         to={link.path}
                                         className="flex items-center text-white/90 hover:text-secondary transition-colors group"
                                     >
@@ -121,7 +125,7 @@ const PrePrimaryFooter = () => {
             <div className="border-t border-white/10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex justify-center">
-                        <Link 
+                        <Link
                             to="/"
                             className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg transition-all flex items-center border border-white/20"
                         >
@@ -133,23 +137,34 @@ const PrePrimaryFooter = () => {
             </div>
 
             {/* Bottom Bar */}
+
             <div className="border-t border-white/10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80">
+
                         <p className="flex items-center">
-                            © 2025 S. Cadambi Pre-Primary Wing. All rights reserved. Made with <Heart className="mx-1 text-secondary" size={16} fill="currentColor" /> by Sunsys Technologies
+                            © 2025 S. Cadambi Pre-Primary Wing. All rights reserved.
                         </p>
+
                         <div className="flex items-center space-x-6">
-                            <Link to="/" className="hover:text-secondary transition-colors">
-                                Privacy Policy
-                            </Link>
-                            <Link to="/" className="hover:text-secondary transition-colors">
-                                Terms of Service
-                            </Link>
+
+                            <a
+                                href="https://www.sunsys.in/"
+                                className="flex items-center hover:text-white transition"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Made with
+                                <Heart className="mx-1 text-secondary" size={16} fill="currentColor" />
+                                by Sunsys Technologies
+                            </a>
+
                         </div>
+
                     </div>
                 </div>
             </div>
+
         </footer>
     );
 };

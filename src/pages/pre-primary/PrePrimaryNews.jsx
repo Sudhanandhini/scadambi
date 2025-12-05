@@ -32,25 +32,81 @@ const PrePrimaryNews = () => {
 
     const upcomingEvents = [
         {
+            title: "Orange Day",
+            date: "November 2025",
+            time: "Regular school hours",
+            description: "A vibrant celebration where children learn about the color orange through fun activities, art, and themed snacks.",
+            icon: "🍊"
+        },
+        {
+            title: "Samanvaya - Annual Cultural and Sports Meet",
+            date: "December 2025",
+            time: "Full day event",
+            description: "Our grand annual celebration bringing together cultural performances, sports activities, and showcasing student talents.",
+            icon: "🎪"
+        },
+        {
+            title: "Violet Day",
+            date: "January 2026",
+            time: "Regular school hours",
+            description: "Exploring the beautiful color violet with creative activities, dress-up, and learning experiences.",
+            icon: "💜"
+        },
+        {
+            title: "Fancy Dress Competition",
+            date: "January 2026",
+            time: "10:00 AM onwards",
+            description: "Children dress up as their favorite characters, fostering creativity and confidence.",
+            icon: "🎭"
+        },
+        {
+            title: "Sankranthi Celebration",
+            date: "January 2026",
+            time: "9:00 AM - 12:00 PM",
+            description: "Traditional harvest festival celebration with cultural activities, kite flying, and festive treats.",
+            icon: "🪁"
+        },
+        {
+            title: "Rainbow Salad Day",
+            date: "February 2026",
+            time: "Regular school hours",
+            description: "Promoting healthy eating habits through colorful salads made with fresh fruits and vegetables.",
+            icon: "🥗"
+        },
+        {
+            title: "Funathon - Annual Sports Day",
+            date: "February 2026",
+            time: "8:00 AM onwards",
+            description: "Join us for our annual sports celebration! Parents and grandparents are invited to participate in fun activities with their little ones.",
+            icon: "🏃"
+        },
+        {
+            title: "Pinnacle - Academic and Co-curricular Culmination",
+            date: "February 2026",
+            time: "10:00 AM onwards",
+            description: "Showcasing children's learning through models, experiments, cultural performances, and creative displays.",
+            icon: "🎨"
+        },
+        {
+            title: "Annual Examination",
+            date: "March 2026",
+            time: "As per schedule",
+            description: "Year-end assessments to evaluate learning outcomes and celebrate children's growth throughout the year.",
+            icon: "📚"
+        },
+        {
             title: "Nutritional Week",
             date: "Feb 2-9, 2026",
             time: "Regular school hours",
             description: "Theme-based days promoting healthy eating: Vegetable Day, Fruit Day, Grains Day, Dry Fruits Day, and Sprouts Day.",
-            icon: "🥗"
-        },
-        {
-            title: "Pinnacle - Academic Culmination",
-            date: "Feb 10, 2026",
-            time: "10:00 AM onwards",
-            description: "Showcasing children's learning through models, experiments, cultural performances, and creative displays.",
-            icon: "🎨"
+            icon: "🍎"
         },
         {
             title: "Cultural Day - Krishna Janmashtami",
             date: "Aug 16, 2026",
             time: "9:00 AM - 12:00 PM",
             description: "Celebration of Krishna's birthday with traditional dress, stories, and fun activities.",
-            icon: "🎭"
+            icon: "🎪"
         },
         {
             title: "International Yoga Day",
@@ -193,7 +249,7 @@ const PrePrimaryNews = () => {
                         </h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {upcomingEvents.map((event, idx) => (
                             <motion.div
                                 key={idx}
@@ -217,7 +273,7 @@ const PrePrimaryNews = () => {
                 </motion.section>
 
                 {/* Circulars & Documents */}
-                <motion.section
+                {/* <motion.section
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -263,7 +319,7 @@ const PrePrimaryNews = () => {
                             ))}
                         </div>
                     </div>
-                </motion.section>
+                </motion.section> */}
 
                 {/* Important Notices */}
                 <motion.section
@@ -298,34 +354,6 @@ const PrePrimaryNews = () => {
                         ))}
                     </div>
                 </motion.section>
-
-                {/* Newsletter Subscription */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center"
-                >
-                    <div className="bg-gradient-to-r from-primary to-primary/90 rounded-3xl p-12 text-white">
-                        <Bell className="mx-auto mb-6 text-secondary" size={64} />
-                        <h2 className="text-3xl md:text-4xl font-bold font-serif mb-6">
-                            Stay Connected
-                        </h2>
-                        <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                            Subscribe to our newsletter for the latest updates, events, and important announcements
-                        </p>
-                        <div className="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
-                            <input 
-                                type="email" 
-                                placeholder="Enter your email" 
-                                className="flex-1 px-6 py-4 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-secondary"
-                            />
-                            <button className="bg-secondary hover:bg-secondary/90 text-primary font-bold px-8 py-4 rounded-lg transition-all transform hover:scale-105 shadow-lg whitespace-nowrap">
-                                Subscribe Now
-                            </button>
-                        </div>
-                    </div>
-                </motion.div>
             </div>
         </div>
     );

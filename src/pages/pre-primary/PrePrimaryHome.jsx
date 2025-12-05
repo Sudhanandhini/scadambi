@@ -1,15 +1,81 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Users, BookOpen, Heart, Sparkles, Baby, Award, Target, Shield } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Users, BookOpen, Heart, Sparkles, Baby, Award, Target, Shield, ChevronLeft, ChevronRight, Quote, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import home from "../../assets/pre-primary/home.png"
 
 const PrePrimaryHome = () => {
+    const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
     const stats = [
         { icon: Users, number: "200+", label: "Happy Children" },
         { icon: Award, number: "15+", label: "Experienced Teachers" },
         { icon: BookOpen, number: "3", label: "Age Groups" },
         { icon: Sparkles, number: "100%", label: "Safe Environment" }
     ];
+
+    const testimonials = [
+        {
+            name: "Sowmya Karthik",
+            relation: "Mahisri's Parent",
+            student: "Mahisri",
+            content: "We are really happy with Mahisri's journey at school. She enjoys going every day and always talks about her teachers and friends with great excitement. We have seen her become more confident, and independent since joining the school. Thank you to all the teachers for your care, patience, and encouragement. We truly appreciate your efforts in helping her learn and grow with so much joy and confidence."
+        },
+        {
+            name: "Shilpa and Raghavendra Shetti",
+            relation: "Parents",
+            student: "Shriambi and Shlok (LKG)",
+            content: "This 2 years of journey is very fantastic to us. As parents our expectation from kids has been thoroughly understood by school and they are on the path to achieve it. The curriculum and the system set by school management is very good and transparent. Our kids are treated well in the school. They are learning not only their curriculum but also extra activities like shlokas chanting, painting and also dancing. This gives us a relief that we are in right zone and our kids are in the safest place."
+        },
+        {
+            name: "Spoorthi",
+            relation: "Smayan's Mom",
+            student: "Smayan (UKG)",
+            content: "I'm very happy with the school's overall environment. The teachers are dedicated and caring, and my child enjoys coming to school every day. I appreciate the balance between academics and co-curricular activities. Thank you for your continued efforts in creating a nurturing learning space."
+        },
+        {
+            name: "Akshata Desai",
+            relation: "Bhavani's Mother",
+            student: "Bhavani (LKG)",
+            content: "I like to take privilege to congratulate the management of the school for its endless efforts. We are really feeling proud of the teaching method. The school is doing excellent in all the fields especially giving a lot of exposure to children. Good effort by all the teachers, coordinators & principal as my child is groomed very well. I highly appreciate the teachers and their engagement with my daughter and boosting her confidence in other activities too. Special thanks to Geeta & Ashwini maam who made my daughter very confident & comfortable at school."
+        },
+        {
+            name: "Parent",
+            relation: "Parikshith's Parent",
+            student: "Parikshith (UKG Lily)",
+            content: "My son Parikshith is studying in S Cadambi Education centre, UKG Lily. As a parent we are happy with the School's performance. My older son is also studying in the same school, now in 10th standard. All the supporting staff, teachers and principal are really kind and supportive for kids. We are happy to see the progress in my son's academic and behaviour in a positive manner. Activity based learning is truly attracting and helping kids in their academic. Teachers motivate kids to take part in co-curricular activities which enhance the learning experience of students. Moral values and cultural awareness are being taught in the school."
+        },
+        {
+            name: "Bushra Vasdev",
+            relation: "Mother",
+            student: "Rajpath (KG)",
+            content: "3 years back my son was very hesitant about the school and wanted to share with us. Now my son is confident in this school. He enjoys learning at his school and doing all his activities. Good teaching environment! I am happy to see my son growing and learning everything. I would like to thank you all the teachers. They are so knowledgeable, they use good methods and are very supportive. The way of teaching is awesome. Thank you teachers, thank you principal mam and supporting staff."
+        }
+    ];
+
+    const missionFeatures = [
+        { text: "Holistic Development Approach" },
+        { text: "State-of-the-art Infrastructure" },
+        { text: "Experienced & Caring Faculty" },
+        { text: "Focus on Values & Ethics" }
+    ];
+
+    // Auto-play functionality
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [testimonials.length]);
+
+    const nextTestimonial = () => {
+        setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    };
+
+    const prevTestimonial = () => {
+        setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    };
 
     return (
         <div className="pt-20 min-h-screen bg-white">
@@ -80,8 +146,87 @@ const PrePrimaryHome = () => {
                 </div>
             </div>
 
-            {/* Programs Section */}
+            {/* Mission Section */}
             <div className="py-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Side - Image */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="relative"
+                        >
+                            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                                <img
+                                    src={home}
+                                    alt="Students learning"
+                                    className="w-full h-[500px] object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
+                            </div>
+                            
+                            {/* Badge */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.3, duration: 0.5 }}
+                                className="absolute -bottom-8 -right-8 bg-secondary rounded-3xl shadow-2xl p-8 text-center"
+                            >
+                                <h3 className="text-5xl font-bold text-primary mb-2">25+</h3>
+                                <p className="text-primary font-semibold text-lg">Years of Excellence</p>
+                            </motion.div>
+                        </motion.div>
+
+                        {/* Right Side - Content */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <span className="text-secondary font-bold tracking-widest uppercase text-sm">
+                                OUR MISSION
+                            </span>
+                            <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mt-3 mb-6 leading-tight">
+                                Nurturing Leaders of Tomorrow
+                            </h2>
+                            <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                                At S. Cadambi Vidya Kendra, we believe that education goes beyond textbooks. Our mission is to foster a learning environment where curiosity is celebrated, and every student is empowered to discover their true potential.
+                            </p>
+
+                            {/* Features Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                                {missionFeatures.map((feature, idx) => (
+                                    <motion.div
+                                        key={idx}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: idx * 0.1 }}
+                                        className="flex items-start"
+                                    >
+                                        <CheckCircle className="text-secondary mr-3 flex-shrink-0 mt-1" size={24} />
+                                        <span className="text-gray-700 font-medium">{feature.text}</span>
+                                    </motion.div>
+                                ))}
+                            </div>
+
+                            {/* Button */}
+                            <Link to="/pre-primary/about">
+                                <button className="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-8 py-4 rounded-lg transition-all transform hover:scale-105 shadow-lg">
+                                    Read Our Story
+                                </button>
+                            </Link>
+                        </motion.div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Programs Section */}
+            <div className="py-20 bg-gradient-to-b from-gray-50 to-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -119,8 +264,97 @@ const PrePrimaryHome = () => {
                 </div>
             </div>
 
+            {/* Testimonials Section */}
+            <div className="py-20 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <span className="text-secondary font-bold tracking-widest uppercase text-sm">Parents' Feedback</span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mt-3 mb-6">
+                            What Parents Say About Us
+                        </h2>
+                        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                            Hear from our wonderful parent community about their experience with S. Cadambi Education Center
+                        </p>
+                    </motion.div>
+
+                    <div className="relative">
+                        <div className="overflow-hidden">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={currentTestimonial}
+                                    initial={{ opacity: 0, x: 100 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -100 }}
+                                    transition={{ duration: 0.5 }}
+                                    className="w-full"
+                                >
+                                    <div className="bg-gradient-to-br from-primary to-primary/90 rounded-3xl p-12 text-white shadow-2xl relative">
+                                        <Quote className="absolute top-8 left-8 text-secondary/30" size={64} />
+                                        <div className="relative z-10">
+                                            <p className="text-xl md:text-2xl leading-relaxed mb-8 font-light">
+                                                "{testimonials[currentTestimonial].content}"
+                                            </p>
+                                            <div className="flex items-center">
+                                                <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mr-4">
+                                                    <Users className="text-primary" size={32} />
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-2xl font-bold text-secondary">{testimonials[currentTestimonial].name}</h4>
+                                                    <p className="text-white/90">{testimonials[currentTestimonial].relation}</p>
+                                                    <p className="text-white/80 text-sm mt-1">Student: {testimonials[currentTestimonial].student}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Navigation Buttons */}
+                        <div className="flex justify-center items-center mt-8 gap-4">
+                            <button
+                                onClick={prevTestimonial}
+                                className="bg-secondary hover:bg-secondary/90 text-primary p-4 rounded-full shadow-lg transition-all transform hover:scale-110"
+                                aria-label="Previous testimonial"
+                            >
+                                <ChevronLeft size={24} />
+                            </button>
+
+                            {/* Dots Indicator */}
+                            <div className="flex gap-2">
+                                {testimonials.map((_, idx) => (
+                                    <button
+                                        key={idx}
+                                        onClick={() => setCurrentTestimonial(idx)}
+                                        className={`h-3 rounded-full transition-all ${
+                                            idx === currentTestimonial
+                                                ? 'bg-primary w-8'
+                                                : 'bg-gray-300 hover:bg-primary/50 w-3'
+                                        }`}
+                                        aria-label={`Go to testimonial ${idx + 1}`}
+                                    />
+                                ))}
+                            </div>
+
+                            <button
+                                onClick={nextTestimonial}
+                                className="bg-secondary hover:bg-secondary/90 text-primary p-4 rounded-full shadow-lg transition-all transform hover:scale-110"
+                                aria-label="Next testimonial"
+                            >
+                                <ChevronRight size={24} />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* Quick Links */}
-            <div className="py-20 bg-gradient-to-b from-gray-50 to-white">
+            {/* <div className="py-20 bg-gradient-to-b from-gray-50 to-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
@@ -135,7 +369,7 @@ const PrePrimaryHome = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: idx * 0.1 }}
-                                    className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all group cursor-pointer"
+                                    className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all group cursor-pointer border-2 border-gray-100 hover:border-secondary"
                                 >
                                     <item.icon className="text-secondary mb-4 group-hover:scale-110 transition-transform" size={40} />
                                     <h3 className="text-xl font-bold text-primary group-hover:text-secondary transition-colors">
@@ -146,7 +380,7 @@ const PrePrimaryHome = () => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* CTA Section */}
             <div className="py-20 bg-gradient-to-r from-primary to-primary/90">
