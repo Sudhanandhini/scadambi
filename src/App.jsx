@@ -44,6 +44,7 @@ import HighSchoolActivities from './pages/high-school/HighSchoolActivities';
 import HighSchoolContact from './pages/high-school/HighSchoolContact';
 import HighSchoolSchoolTimings from './pages/high-school/HighSchoolSchoolTimings';
 import HighSchoolAcademicCalendar from './pages/high-school/HighSchoolAcademicCalendar';
+import PrePrimaryGallery from './pages/pre-primary/PrePrimaryGallery';
 
 // Simple ScrollToTop component to reset scroll on route change
 const ScrollToTopWrapper = () => {
@@ -106,6 +107,8 @@ function App() {
           <Route path="/pre-primary/schooltime" element={<PrePrimarySchoolTimings/>} />
           <Route path="/pre-primary/calender" element={<PrePrimaryAcademicCalendar />} />
           <Route path="/pre-primary/contact" element={<PrePrimaryContact />} />
+           <Route path="/pre-primary/gallery" element={<PrePrimaryGallery />} />
+
 
           {/* HIGH SCHOOL SECTION ROUTES */}
           <Route path="/high-school" element={<HighSchoolHome />} />

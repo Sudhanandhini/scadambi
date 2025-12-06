@@ -17,7 +17,7 @@ const divisions = [
         icon: Baby,
         color: 'from-blue-400 to-blue-600',
         image: preschoolImg,
-        link: '/pre-school'
+        link: '/scadambi/pre-school'
     },
     {
         id: 'primary',
@@ -27,7 +27,7 @@ const divisions = [
         icon: BookOpen,
         color: 'from-green-400 to-green-600',
         image: primaryImg,
-        link: 'scadambi/pre-primary'
+        link: '/scadambi/pre-primary'
     },
     {
         id: 'highschool',
@@ -37,7 +37,7 @@ const divisions = [
         icon: School,
         color: 'from-orange-400 to-orange-600',
         image: highschoolImg,
-        link: 'scadambi/high-school'
+        link: '/scadambi/high-school'
     },
     {
         id: 'college',
@@ -47,7 +47,7 @@ const divisions = [
         icon: GraduationCap,
         color: 'from-red-500 to-red-700',
         image: collegeImg,
-        link: '/pre-school'
+        link: '/scadambi/pre-school'
     },
     {
         id: 'sports',
@@ -57,7 +57,7 @@ const divisions = [
         icon: Trophy,
         color: 'from-yellow-400 to-yellow-600',
         image: sportsImg,
-        link: '/pre-school'
+        link: '/scadambi/pre-school'
     },
     {
         id: 'arts',
@@ -67,7 +67,7 @@ const divisions = [
         icon: Palette,
         color: 'from-purple-400 to-purple-600',
         image: 'https://images.unsplash.com/photo-1460661619275-dbea996984c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        link: '/pre-school'
+        link: '/scadambi/pre-school'
     }
 ];
 

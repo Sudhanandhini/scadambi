@@ -10,21 +10,21 @@ const PrePrimaryFooter = () => {
         { name: 'Facilities', path: '/pre-primary/facilities' },
         { name: 'Activities', path: '/pre-primary/activities' },
         { name: 'News & Events', path: '/pre-primary/news' },
+        {name:'Gallery', path:'/pre-primary/gallery'},
         { name: 'Contact Us', path: '/pre-primary/contact' }
     ];
 
     const programs = [
-        { name: 'SHISHU CHAITANYA-PLAY HOME', link: '/scadambi/preschool' },
-        { name: 'Pre Primary', link: '/scadambi/pre-primary' },
-        { name: 'ICSE PRIMARY WING', link: '/scadambi/high-school' },
-        { name: 'ICSE HIGH SCHOOL WING', link: '/scadambi/pu-college' },
-        { name: ' STATE HIGH SCHOOL ', link: '/scadambi/pu-college' },
-        { name: 'PU COLLEGE', link: '/scadambi/pu-college' },
-
+        { name: 'SHISHU CHAITANYA-PLAY HOME', path: '/play-school' },
+            { name: 'Pre Primary', path: '/pre-primary' },
+            { name: 'ICSE PRIMARY WING', path: '/icse-primary' },
+            { name: 'ICSE HIGH SCHOOL WING', path: '/icse-high' },
+            { name: ' State High School ', path: '/high-school' },
+            { name: 'PU COLLEGE', path: '/pu-college' },
     ];
 
     return (
-        <footer className="bg-[#009053]  text-white">
+        <footer className="bg-[#0F2A4A]  text-white">
             {/* Main Footer */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -52,6 +52,13 @@ const PrePrimaryFooter = () => {
                                 <Facebook size={20} />
                             </a>
                         </div>
+                         <Link
+                            to="/"
+                            className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg transition-all flex items-center border border-white/20 py-4 my-4"
+                        >
+                            <ArrowRight size={18} className="mr-2 rotate-180" />
+                            Visit Main Website
+                        </Link>
                     </div>
 
                     {/* Quick Links */}
@@ -122,7 +129,7 @@ const PrePrimaryFooter = () => {
             </div>
 
             {/* Back to Main Site */}
-            <div className="border-t border-white/10">
+            {/* <div className="border-t border-white/10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex justify-center">
                         <Link
@@ -134,7 +141,7 @@ const PrePrimaryFooter = () => {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Bottom Bar */}
 

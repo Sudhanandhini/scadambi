@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Heart } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Heart, ArrowRight, } from 'lucide-react';
 import logo from '../../assets/images/logo.png';
 
 const HighSchoolFooter = () => {
@@ -14,13 +14,16 @@ const HighSchoolFooter = () => {
   ];
 
   const academics = [
-    { name: 'Curriculum', path: '/high-school/academic' },
-    { name: 'School Timings', path: '/high-school/schooltime' },
-    { name: 'Academic Calendar', path: '/high-school/calender' },
+     { name: 'SHISHU CHAITANYA-PLAY HOME', path: '/play-school' },
+            { name: 'Pre Primary', path: '/pre-primary' },
+            { name: 'ICSE PRIMARY WING', path: '/icse-primary' },
+            { name: 'ICSE HIGH SCHOOL WING', path: '/icse-high' },
+            { name: ' State High School ', path: '/high-school' },
+            { name: 'PU COLLEGE', path: '/pu-college' },
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-primary via-primary to-blue-900 text-white">
+    <footer className="bg-[#0F2A4A]  text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -48,6 +51,15 @@ const HighSchoolFooter = () => {
                 <Facebook size={20} />
               </a>
             </div>
+<Link
+                            to="/"
+                            className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg transition-all flex items-center border border-white/20 py-4 my-4"
+                        >
+                            <ArrowRight size={18} className="mr-2 rotate-180" />
+                            Visit Main Website
+                        </Link>
+            
+            
           </div>
 
           {/* Quick Links */}
@@ -70,7 +82,7 @@ const HighSchoolFooter = () => {
 
           {/* Academics */}
           <div>
-            <h4 className="text-lg font-bold mb-4 text-secondary">Academics</h4>
+            <h4 className="text-lg font-bold mb-4 text-secondary">Our Division</h4>
             <ul className="space-y-2">
               {academics.map((link) => (
                 <li key={link.name}>
@@ -84,10 +96,7 @@ const HighSchoolFooter = () => {
                 </li>
               ))}
             </ul>
-            <div className="mt-6">
-              <p className="text-sm font-semibold text-secondary mb-2">Grade 9-10</p>
-              <p className="text-xs text-gray-300">Karnataka State Board</p>
-            </div>
+           
           </div>
 
           {/* Contact Info */}
@@ -118,7 +127,7 @@ const HighSchoolFooter = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-blue-800">
+      <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-300">
             <p>

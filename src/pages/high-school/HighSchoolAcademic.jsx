@@ -10,7 +10,7 @@ import {
   Award,
   Target,
   CheckCircle,
-  Languages
+  Languages, Trophy
 } from 'lucide-react';
 
 const HighSchoolAcademic = () => {

@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  GraduationCap, 
-  Trophy, 
-  Users, 
-  BookOpen, 
-  Award, 
+import {
+  GraduationCap,
+  Trophy,
+  Users,
+  BookOpen,
+  Award,
   Target,
   ArrowRight,
   Lightbulb,
   Globe,
-  Heart
+  Heart,
+  Calendar
 } from 'lucide-react';
 
 const HighSchoolHome = () => {
@@ -72,6 +73,34 @@ const HighSchoolHome = () => {
     },
   ];
 
+  const campusFeatures = [
+    {
+      icon: BookOpen,
+      title: 'State Board Excellence',
+      description:
+        'Comprehensive curriculum aligned with Karnataka State Board standards for grades 9-10.',
+    },
+    {
+      icon: Users,
+      title: 'Expert Faculty',
+      description:
+        'Highly qualified and experienced teachers dedicated to student success.',
+    },
+    {
+      icon: Award,
+      title: 'Holistic Development',
+      description:
+        'Focus on academics, sports, cultural activities, and character building.',
+    },
+    {
+      icon: Trophy,
+      title: 'Best Administration',
+      description:
+        'Recognized by Government of Karnataka for excellence in education.',
+    },
+  ];
+
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -80,7 +109,7 @@ const HighSchoolHome = () => {
           <div className="absolute top-20 left-10 w-72 h-72 bg-secondary rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 py-20 md:py-28">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -96,23 +125,23 @@ const HighSchoolHome = () => {
             >
               <span className="text-secondary font-semibold">Grade 9-10 • State Board</span>
             </motion.div>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               S. Cadambi Vidya Kendra
               <span className="block text-secondary mt-2">High School</span>
             </h1>
-            
+
             <p className="text-lg md:text-xl text-gray-300 mb-4 italic">
               "Jnanam Paramam Balam"
             </p>
             <p className="text-base md:text-lg text-gray-400 mb-8">
               Knowledge is the Supreme Power
             </p>
-            
+
             <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
               Empowering young minds through quality education, strong values, and holistic development since 1984.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/high-school/admissions"
@@ -150,6 +179,143 @@ const HighSchoolHome = () => {
         </div>
       </section>
 
+      
+      {/* About Section – University style layout */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* LEFT – Image collage */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              {/* Main big image */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&h=900&fit=crop"
+                  alt="Students on campus"
+                  className="w-full h-[260px] md:h-[380px] lg:h-[420px] object-cover"
+                />
+              </div>
+
+              {/* Small image overlapping bottom-right */}
+              <div className="absolute -bottom-16 right-6 md:right-10 w-52 md:w-64 rounded-3xl overflow-hidden shadow-2xl border-8 border-white bg-white">
+                <img
+                  src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&h=900&fit=crop"
+                  alt="Campus life"
+                  className="w-full h-[220px] md:h-[260px] object-cover"
+                />
+              </div>
+
+              {/* Circular badge bottom-left (play-style button) */}
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, type: "spring" }}
+                className="absolute -bottom-20 left-4 md:left-10 w-40 h-40 md:w-44 md:h-44 rounded-full bg-primary shadow-2xl border-[10px] border-white flex items-center justify-center cursor-pointer group"
+              >
+                <div className="w-16 h-16 rounded-full bg-white/15 border border-white/40 flex items-center justify-center group-hover:bg-white/25 transition-all">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </motion.div>
+
+              {/* Vertical EST text – like in the design */}
+              <div className="absolute top-0 -left-10 hidden xl:block">
+                <div
+                  className="text-6xl font-bold text-gray-200 tracking-[0.2em]"
+                  style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
+                >
+                  EST 1984
+                </div>
+              </div>
+
+              {/* Spacer so overlaps don’t cut off */}
+              <div className="h-24 md:h-28" />
+            </motion.div>
+
+            {/* RIGHT – Content same style as screenshot */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              {/* Small label */}
+              <div>
+                <span className="text-secondary font-bold uppercase tracking-[0.25em] text-xs md:text-sm">
+                  Welcome
+                </span>
+                <h2 className="mt-4 text-3xl md:text-5xl font-bold text-primary leading-tight">
+                  The most trusted & holistic
+                  <span className="block text-secondary mt-2">
+                    High School in Basaveshwaranagar
+                  </span>
+                </h2>
+              </div>
+
+              {/* Description paragraph */}
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                S. Cadambi Vidya Kendra High School has been a cornerstone of quality
+                secondary education since 1984. We blend strong academics, values,
+                and co-curricular opportunities to help every learner discover and
+                develop their full potential.
+              </p>
+
+              {/* Programs list – styled like the design */}
+              <div className="space-y-4">
+                {/* Grade 9 */}
+                <div className="py-4 border-b border-gray-200">
+                  <div className="flex items-center justify-between gap-4">
+                    <h3 className="text-xl font-semibold text-primary">
+                      Grade 9 Program
+                    </h3>
+                    <ArrowRight className="w-5 h-5 text-secondary" />
+                  </div>
+                  <p className="mt-1 text-sm md:text-base text-gray-500">
+                    Browse the Grade 9 curriculum and continuous assessment pattern.
+                  </p>
+                </div>
+
+                {/* Grade 10 */}
+                <div className="py-4 border-b border-gray-200">
+                  <div className="flex items-center justify-between gap-4">
+                    <h3 className="text-xl font-semibold text-primary">
+                      Grade 10 (SSLC) Program
+                    </h3>
+                    <ArrowRight className="w-5 h-5 text-secondary" />
+                  </div>
+                  <p className="mt-1 text-sm md:text-base text-gray-500">
+                    Explore our intensive SSLC preparation with board-oriented
+                    support.
+                  </p>
+                </div>
+              </div>
+
+              {/* Button like “More About” in screenshot, but with your theme */}
+              <div>
+                <Link
+                  to="/high-school/about"
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold bg-gradient-to-r from-primary to-blue-900 text-white shadow-lg hover:shadow-xl hover:scale-105 transition-transform group"
+                >
+                  More About
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Welcome Section */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4">
@@ -179,13 +345,13 @@ const HighSchoolHome = () => {
                 Building Tomorrow's Leaders
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Established in 1984, S. Cadambi Vidya Kendra High School has been a beacon of educational excellence 
-                in Basaveshwara Nagar, Bangalore. Our institution was founded by visionary educationists with a mission 
+                Established in 1984, S. Cadambi Vidya Kendra High School has been a beacon of educational excellence
+                in Basaveshwara Nagar, Bangalore. Our institution was founded by visionary educationists with a mission
                 to provide quality education to students from all backgrounds.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                We follow the Karnataka State Board curriculum for grades 9-10, offering comprehensive education that 
-                prepares students for competitive examinations and future success. Our dedicated faculty and modern 
+                We follow the Karnataka State Board curriculum for grades 9-10, offering comprehensive education that
+                prepares students for competitive examinations and future success. Our dedicated faculty and modern
                 infrastructure ensure that every student receives personalized attention and the best learning experience.
               </p>
               <Link
@@ -217,8 +383,104 @@ const HighSchoolHome = () => {
         </div>
       </section>
 
+
+
+
+      {/* Campus Lifestyle Section – same layout as reference image */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* subtle wave pattern in background */}
+        <div className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 w-[500px] opacity-20">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M50 50C150 100 250 100 350 50C250 150 150 150 50 50ZM50 120C150 170 250 170 350 120C250 220 150 220 50 120ZM50 190C150 240 250 240 350 190C250 290 150 290 50 190Z"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.5"
+            />
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 relative">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            {/* LEFT – big campus image */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&h=900&fit=crop"
+                  alt="Students on campus"
+                  className="w-full h-[260px] md:h-[380px] lg:h-[430px] object-cover"
+                />
+              </div>
+            </motion.div>
+
+            {/* RIGHT – white card with list */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="bg-white rounded-3xl shadow-2xl px-6 py-8 md:px-10 md:py-12">
+                {/* small label */}
+                <span className="text-secondary font-bold uppercase tracking-[0.25em] text-xs md:text-sm">
+                 SCHOOL
+                </span>
+
+                {/* heading */}
+                <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
+                  Why Choose Us
+                  {/* <span className="block">Lifestyle</span> */}
+                </h2>
+
+                {/* feature list */}
+                <div className="mt-8 space-y-5 md:space-y-6">
+                  {campusFeatures.map((item, index) => (
+                    <motion.div
+                      key={item.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.08 }}
+                      className="flex items-start gap-5"
+                    >
+                      {/* square icon block */}
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 md:w-18 md:h-18 rounded-2xl bg-secondary/10 flex items-center justify-center">
+                          <item.icon className="w-7 h-7 text-secondary" />
+                        </div>
+                      </div>
+
+                      {/* text */}
+                      <div>
+                        <h3 className="text-lg md:text-xl font-semibold text-primary">
+                          {item.title}
+                        </h3>
+                        <p className="mt-1 text-sm md:text-base text-gray-500 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
       {/* Features Section */}
-      <section className="py-16 bg-gradient-to-br from-yellow-50 to-white">
+      {/* <section className="py-16 bg-gradient-to-br from-yellow-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -251,52 +513,111 @@ const HighSchoolHome = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Principal's Message */}
-      <section className="py-16 bg-background">
-        <div className="max-w-6xl mx-auto px-4">
+    
+
+      {/* Upcoming Events Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-xl overflow-hidden border-l-8 border-secondary"
+            className="text-center mb-12"
           >
-            <div className="p-8 md:p-12">
-              <div className="flex items-center gap-4 mb-6">
-                <Globe className="w-12 h-12 text-secondary" />
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-primary">
-                    Principal's Message
-                  </h2>
-                  <p className="text-gray-600">Smt. Indira Shyam Sunder</p>
-                </div>
-              </div>
-              <div className="prose max-w-none">
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  Welcome to S. Cadambi Vidya Kendra High School. I am truly honored to serve as the Principal 
-                  of this prestigious institution. Our foundation is built on a resolute commitment to academic 
-                  precision and holistic development.
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  Education is about much more than just mastering a curriculum; it is about cultivating curious, 
-                  critical thinkers prepared to navigate the complexities of the modern world. Our dedicated faculty 
-                  members are not just instructors; they are mentors who inspire lifelong learning in every student.
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  We encourage participation in a wide range of extra-curricular activities - from sports to cultural 
-                  events, from STEM clubs to community service initiatives. These experiences are crucial for 
-                  developing leadership skills, teamwork, and a strong sense of social responsibility.
-                </p>
-              </div>
-              <Link
-                to="/high-school/about"
-                className="inline-flex items-center gap-2 mt-6 text-secondary font-semibold hover:gap-4 transition-all"
-              >
-                Read Full Message <ArrowRight size={20} />
-              </Link>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              Upcoming Events
+            </h2>
+            <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+            <p className="text-lg text-gray-600">
+              Stay updated with our school calendar - Academic Year 2025-26
+            </p>
           </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Left Side - Calendar Events */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-secondary">
+              <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+                <Calendar className="w-8 h-8 text-secondary" />
+                Calendar of Events 2025-26
+              </h3>
+              <div className="space-y-4">
+                {[
+                  { date: '01', month: 'November 2025', event: 'Karnataka Rajyotsava' },
+                  { date: '05', month: 'November 2025', event: 'Guru Nanak Jayanthi' },
+                  { date: '14', month: 'November 2025', event: "Children's Day Celebration" },
+                  { date: '15', month: 'November 2025', event: 'Sammilana 2025 (Inter-school Competition)' },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl hover:bg-yellow-50 transition-all border-l-4 border-secondary"
+                  >
+                    <div className="bg-gradient-to-br from-primary to-blue-900 text-white rounded-xl p-4 text-center min-w-[80px]">
+                      <div className="text-3xl font-bold">{item.date}</div>
+                      <div className="text-xs mt-1">{item.month.split(' ')[0]}</div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-semibold text-primary">{item.event}</p>
+                      <p className="text-sm text-gray-600">{item.month}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Side - Upcoming Events */}
+            <div className="bg-gradient-to-br from-primary to-blue-900 rounded-2xl shadow-xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <Award className="w-8 h-8 text-secondary" />
+                Upcoming Events
+              </h3>
+              <div className="space-y-4">
+                {[
+                  { date: '1', month: 'December 2025', event: 'Pre-Final Exam for STD X' },
+                  { date: '1', month: 'December 2025', event: 'II Round Tests Pre-primary to STD IX' },
+                  { date: '7', month: 'December 2025', event: 'Excursion for STD X' },
+                  { date: '25', month: 'December 2025', event: 'Christmas Celebration' },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-center gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all border-l-4 border-secondary"
+                  >
+                    <div className="bg-secondary text-primary rounded-xl p-4 text-center min-w-[80px] font-bold">
+                      <div className="text-3xl">{item.date}</div>
+                      <div className="text-xs mt-1">{item.month.split(' ')[0]}</div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-semibold text-white">{item.event}</p>
+                      <p className="text-sm text-yellow-200">{item.month}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+
+
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <Link to="/high-school/calender">
+              <button className="bg-secondary hover:bg-secondary/90 text-primary font-bold px-8 py-4 my-8 rounded-lg transition-all transform hover:scale-105 shadow-lg">
+                View Complete Calendar
+              </button>
+            </Link>
+          </div>
+
+
+
         </div>
       </section>
 

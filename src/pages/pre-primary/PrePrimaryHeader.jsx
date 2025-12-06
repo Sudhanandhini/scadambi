@@ -29,6 +29,7 @@ const PrePrimaryHeader = () => {
         { name: 'Admissions', path: '/pre-primary/admissions' },
         { name: 'Facilities', path: '/pre-primary/facilities' },
         { name: 'Activities', path: '/pre-primary/activities' },
+        {name:'Gallery', path:'/pre-primary/gallery'},
         { name: 'News', path: '/pre-primary/news' },
         { name: 'Contact', path: '/pre-primary/contact' }
     ];
@@ -138,12 +139,12 @@ const PrePrimaryHeader = () => {
                         </nav>
 
                         {/* Enroll Button */}
-                        <Link
+                        {/* <Link
                             to="/pre-primary/admissions"
                             className="hidden lg:block bg-secondary hover:bg-secondary/90 text-primary font-bold px-6 py-3 rounded-lg transition-all transform hover:scale-105 shadow-lg"
                         >
                             Enroll Now
-                        </Link>
+                        </Link> */}
 
                         {/* Mobile Menu Button */}
                         <button

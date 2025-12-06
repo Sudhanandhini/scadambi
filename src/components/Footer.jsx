@@ -60,10 +60,10 @@ const Footer = () => {
 
     <ul className="space-y-3">
         {[
-            { name: 'SHISHU CHAITANYA-PLAY HOME', link: '/scadambi/preschool' },
+             { name: 'SHISHU CHAITANYA-PLAY HOME', link: '/scadambi/play-school' },
             { name: 'Pre Primary', link: '/scadambi/pre-primary' },
-            { name: 'ICSE PRIMARY WING', link: '/scadambi/high-school' },
-            { name: 'ICSE HIGH SCHOOL WING', link: '/scadambi/pu-college' },
+            { name: 'ICSE PRIMARY WING', link: '/scadambi/icse-primary' },
+            { name: 'ICSE HIGH SCHOOL WING', link: '/scadambi/icse-high' },
             { name: ' State High School ', link: '/scadambi/high-school' },
             { name: 'PU COLLEGE', link: '/scadambi/pu-college' },
         ].map((item) => (

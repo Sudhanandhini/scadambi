@@ -70,8 +70,15 @@ import pic55 from "../../assets/pre-primary/activity/21.png"
 import pic56 from "../../assets/pre-primary/activity/22.png"
 import pic58 from "../../assets/pre-primary/activity/Picture40.jpg"
 import pic57 from "../../assets/pre-primary/activity/Picture41.jpg"
-
-
+import pic59 from "../../assets/pre-primary/activity/Picture100.jpg"
+import pic60 from "../../assets/pre-primary/activity/Picture102.jpg"
+import pic61 from "../../assets/pre-primary/activity/Picture103.jpg"
+import pic62 from "../../assets/pre-primary/activity/Picture104.jpg"
+import pic63 from "../../assets/pre-primary/activity/Picture105.jpg"
+import pic64 from "../../assets/pre-primary/activity/Picture106.jpg"
+import pic65 from "../../assets/pre-primary/activity/25.png"
+import pic66 from "../../assets/pre-primary/activity/23.png"
+import pic67 from "../../assets/pre-primary/activity/24.png"
 
 
 
@@ -159,7 +166,7 @@ const PrePrimaryActivities = () => {
             description:
                 "Till the age of 3 a child spends most of his life with his parents and immediate family. At preschool children spend extended periods of time with other children and people who are not members of their families. The child learns how to make friends, collaborate, listen and develop conversational skills with strangers. They also learn how to interact with others, how to share and how to conduct themselves in a socially appropriate manner.",
             images: [
-               pic3,pic4
+                pic3, pic4
             ],
             color: "from-blue-400 to-blue-600",
         },
@@ -189,7 +196,7 @@ const PrePrimaryActivities = () => {
             description:
                 "Fine motor and gross motor development are one of the major skills that a child should acquire. These skills stay with them for life and help them in various activities. Preschool activities such as lacing, reading, cutting, sticking, throwing, painting, running and outdoor play encourages developing fine and gross motor development.",
             images: [
-               pic9,pic10
+                pic9, pic10
             ],
             color: "from-red-400 to-red-600",
         },
@@ -199,7 +206,7 @@ const PrePrimaryActivities = () => {
             description:
                 "In preschool, teachers use a variety of games and activities to develop pre-literacy skills. Rhymes help to discriminate between different sounds. Stories help to develop fundamental life skills in a fun way. Introduction of alphabets, words and numbers are a prerequisite for language and math skills. Children develop a sense of joy and motivation to learn new things.Here in SCEC, the development and growth of each child is taken into consideration and the best learning experience is given to them. They strive to build a strong foundation that ensures academic success and overall growth. ",
             images: [
-               pic11,pic12
+                pic11, pic12
             ],
             color: "from-yellow-400 to-yellow-600",
         },
@@ -209,7 +216,7 @@ const PrePrimaryActivities = () => {
             description:
                 "Numeracy is the ability to see and use math in all areas of life. Math is introduced through everyday play and activities by encouraging the child to compare and order things of different sizes, group things together, use words to describe where things are, notice and make patterns. When we teach about math concepts in everyday activities, it helps the child to understand how and why math is useful.",
             images: [
-               pic13, pic14
+                pic13, pic14
             ],
             color: "from-indigo-400 to-indigo-600",
         },
@@ -244,7 +251,7 @@ const PrePrimaryActivities = () => {
             description:
                 "Different games will be conducted for the children, parents and grandparents. The event will be a wonderful, fun filled experience encouraging the children to participate in all the games. A day full of laughter, competition, and family bonding.",
             images: [
-               pic19, pic20
+                pic19, pic20
             ],
             color: "from-green-400 to-green-600",
         },
@@ -266,7 +273,7 @@ const PrePrimaryActivities = () => {
             description:
                 "stresses harmony between humans, the environment, and overall wellness. Children are growing up in a world where screens take up a lion’s share of their routine. Even kids find themselves ensnared in the clutches of stress. This is where yoga steps in, one of the holistic ways to manage day-to-day stress. This International Yoga Day, let it be the start of a new routine where yoga is introduced to children. S. Cadambi Education Centre celebrated 11th International Yoga Day. Children and teachers performed simple yogasana under the guidance of our Physical education instructor Smt. Kunjurani. Kids performed yogasana with full energy and enthusiasm.",
             images: [
-              pic23, pic24
+                pic23, pic24
             ],
             color: "from-orange-400 to-orange-600",
         },
@@ -277,7 +284,7 @@ const PrePrimaryActivities = () => {
             description:
                 "The star of the week is for students to learn more about each other and their families. The better way to build a strong classroom community.  Here parents are given an opportunity to become a teacher of their child's class. Parents with great enthusiasm conducted different activities for children, taught songs and moral values to the children.",
             images: [
-               pic25, pic26
+                pic25, pic26
             ],
             color: "from-yellow-400 to-yellow-600",
         },
@@ -288,7 +295,7 @@ const PrePrimaryActivities = () => {
             description:
                 "S.Cadambi Education Centre -Nutritional week from 02/09/25 to 09/09/25 Feeding Smart Right From Start to help children practice healthy eating habits. Vegetable salad day, Fruit Salad day, Whole Grains day, Dry Fruits Day, Sprouts day was celebrated to help tiny tots to learn the names,color, shape and taste of vegetables, fruits, grains, dry fruits and also its benefits.",
             images: [
-               pic27, pic28, pic29, pic30, pic31
+                pic27, pic28, pic29, pic30, pic31
             ],
             color: "from-red-400 to-red-600",
         },
@@ -299,7 +306,7 @@ const PrePrimaryActivities = () => {
             description:
                 "Celebrating India's Republic Day with patriotic fervor. Children participate in cultural programs, flag hoisting, and activities that instill pride in our nation and its democratic values.",
             images: [
-               pic32,pic33
+                pic32, pic33
             ],
             color: "from-indigo-400 to-indigo-600",
         },
@@ -321,7 +328,7 @@ const PrePrimaryActivities = () => {
             description:
                 "A pretend play activity on Doctor's Day was conducted on July 1st 2025 in SCEC preprimary wing. A pretend hospital was set up with toy medical equipment, role-play as doctors and patients by children, they used dolls for play. Kids learnt the tools used by doctors, how hospital works.Pretend play may look simple, but it’s a powerful tool for helping toddlers learn about themselves and the world around them in a joyful and natural way.",
             images: [
-               pic36, pic37
+                pic36, pic37
             ],
             color: "from-cyan-400 to-cyan-600",
         },
@@ -354,7 +361,7 @@ const PrePrimaryActivities = () => {
             description:
                 "Celebrating the birth of Lord Krishna with traditional activities, dressing up as Krishna and Radha, Dahi Handi, devotional songs, and stories about Krishna's childhood. Children learn about love, devotion, and Indian mythology.",
             images: [
-               pic42, pic43, pic44
+                pic42, pic43, pic44
             ],
             color: "from-sky-400 to-sky-600",
         },
@@ -376,7 +383,7 @@ const PrePrimaryActivities = () => {
             description:
                 "Diwali, the 'festival of lights' was celebrated at SCEC. The students showcase the spirit of Diwali through a skit where kids are dressed as Lord Rama, Sita, Lakshmana, Bharatha, and Hanuman. The assembly has an ambience of joy with vibrant hues, chanting bhajana, shlokas, and activities like drawing and coloring.",
             images: [
-               pic48, pic49, pic50
+                pic48, pic49, pic50
             ],
             color: "from-orange-400 to-orange-600",
         },
@@ -387,7 +394,7 @@ const PrePrimaryActivities = () => {
             description:
                 "Celebrating Karnataka's formation day with traditional performances, songs in Kannada, and activities that instill pride in our state's rich culture, language, and heritage. Children dress in traditional attire and learn about Karnataka's history.",
             images: [
-               pic51, pic52, pic53, pic54, pic55, pic56
+                pic51, pic52, pic53, pic54, pic55, pic56
             ],
             color: "from-red-400 to-red-600",
         },
@@ -402,6 +409,30 @@ const PrePrimaryActivities = () => {
             ],
             color: "from-violet-400 to-violet-600",
         },
+      
+        {
+            icon: Sparkles,
+            title: "Assembly Activities",
+            subtitle: "Showcasing Talents & Values",
+            description:
+                "Assembly activities at SCEC provide a vibrant platform for students to showcase their talents and learn important life lessons. Children participate in skits, rhyme recitations, theme-based talks, role plays, storytelling, news reading and special presentations on festivals and important days. These activities help in improving communication skills, stage confidence, team spirit and value-based learning in a joyful and engaging manner.",
+            images: [
+                pic65, pic66, pic67
+            ],
+            color: "from-blue-400 to-blue-600",
+        },
+         {
+            icon: Users,
+            title: "Assembly",
+            subtitle: "Daily Morning Gathering",
+            description:
+                "Our daily morning assembly at SCEC sets a positive tone for the day. Students come together to recite prayers, thought for the day, pledge, and sing patriotic songs. Important announcements are shared and values like discipline, punctuality, respect and responsibility are reinforced. The assembly helps children build confidence, develop a sense of belonging and start their day with focus and enthusiasm.",
+            images: [
+                pic59, pic60,pic61, pic62, pic63, pic64
+            ],
+            color: "from-emerald-400 to-emerald-600",
+        },
+
     ];
 
     const specialPrograms = [

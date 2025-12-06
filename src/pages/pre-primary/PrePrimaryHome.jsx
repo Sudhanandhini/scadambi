@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Users, BookOpen, Heart, Sparkles, Baby, Award, Target, Shield, ChevronLeft, ChevronRight, Quote, CheckCircle } from 'lucide-react';
+import { ArrowRight, Users, BookOpen, Heart, Sparkles, Baby, Award, Target, Shield, ChevronLeft, ChevronRight, Quote, CheckCircle, Calendar,  Trophy } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import home from "../../assets/pre-primary/home.png"
 
@@ -83,7 +83,7 @@ const PrePrimaryHome = () => {
             <div className="relative h-[600px] bg-cover bg-center" style={{
                 backgroundImage: "url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1920&h=1080&fit=crop')"
             }}>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/75"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/65 to-primary/55"></div>
                 <div className="absolute inset-0 flex items-center">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                         <motion.div
@@ -166,7 +166,7 @@ const PrePrimaryHome = () => {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
                             </div>
-                            
+
                             {/* Badge */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.8 }}
@@ -264,8 +264,219 @@ const PrePrimaryHome = () => {
                 </div>
             </div>
 
+            {/* Upcoming Events Section */}
+           
+
+             <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-yellow-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-block px-6 py-2 bg-secondary/10 rounded-full mb-4">
+              <span className="text-secondary font-bold uppercase tracking-wider text-sm">Academic Year 2025-26</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+              Upcoming Events
+            </h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-secondary to-yellow-600 mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Stay connected with our vibrant school community through exciting events and celebrations
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            {/* Left Side - Calendar Events */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100"
+            >
+              <div className="bg-gradient-to-r from-primary to-blue-900 p-8">
+                <div className="flex items-center gap-4 text-white">
+                  <div className="bg-white/20 backdrop-blur-sm p-3 rounded-2xl">
+                    <Calendar className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">Calendar Events</h3>
+                    <p className="text-gray-200 text-sm">November - December 2025</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-8 space-y-4">
+                {[
+                  { date: '01', month: 'Nov', year: '2025', event: 'Karnataka Rajyotsava', color: 'from-orange-500 to-red-500' },
+                  { date: '05', month: 'Nov', year: '2025', event: 'Guru Nanak Jayanthi', color: 'from-blue-500 to-indigo-500' },
+                  { date: '14', month: 'Nov', year: '2025', event: "Children's Day Celebration", color: 'from-pink-500 to-purple-500' },
+                  { date: '15', month: 'Nov', year: '2025', event: 'Sammilana 2025 (Inter-school)', color: 'from-green-500 to-emerald-500' },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="group relative"
+                  >
+                    <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-gray-50 to-yellow-50 hover:from-yellow-50 hover:to-secondary/10 transition-all cursor-pointer border-2 border-transparent hover:border-secondary/30 hover:shadow-lg">
+                      <div className={`relative bg-gradient-to-br ${item.color} text-white rounded-2xl p-5 text-center min-w-[90px] shadow-lg group-hover:scale-110 transition-transform`}>
+                        <div className="text-4xl font-bold leading-none">{item.date}</div>
+                        <div className="text-xs font-semibold mt-1 uppercase tracking-wider">{item.month}</div>
+                        <div className="absolute -top-1 -right-1 w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                          <Award className="w-3 h-3 text-white" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-bold text-primary text-lg group-hover:text-secondary transition-colors">{item.event}</p>
+                        <p className="text-sm text-gray-500 mt-1">{item.month} {item.date}, {item.year}</p>
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-secondary group-hover:translate-x-2 transition-all" />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right Side - Upcoming Events */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-primary via-blue-900 to-primary rounded-3xl shadow-2xl overflow-hidden text-white"
+            >
+              <div className="bg-white/10 backdrop-blur-sm p-8 border-b border-white/20">
+                <div className="flex items-center gap-4">
+                  <div className="bg-secondary p-3 rounded-2xl">
+                    <Trophy className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">Coming Soon</h3>
+                    <p className="text-gray-200 text-sm">December 2025 Highlights</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-8 space-y-4">
+                {[
+                  { date: '1', month: 'Dec', event: 'Pre-Final Exam for STD X', icon: '📝' },
+                  { date: '1', month: 'Dec', event: 'II Round Tests (Pre-primary to STD IX)', icon: '📚' },
+                  { date: '7', month: 'Dec', event: 'Educational Excursion - STD X', icon: '🚌' },
+                  { date: '25', month: 'Dec', event: 'Christmas Celebration', icon: '🎄' },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="group"
+                  >
+                    <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 backdrop-blur-sm hover:bg-white/15 transition-all cursor-pointer border-2 border-white/10 hover:border-secondary/50 hover:shadow-xl">
+                      <div className="bg-gradient-to-br from-secondary to-yellow-600 text-white rounded-2xl p-5 text-center min-w-[90px] shadow-lg group-hover:scale-110 transition-transform relative">
+                        <div className="text-4xl font-bold leading-none">{item.date}</div>
+                        <div className="text-xs font-semibold mt-1 uppercase tracking-wider">{item.month}</div>
+                        <div className="absolute -top-2 -right-2 text-3xl">{item.icon}</div>
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-bold text-white text-lg group-hover:text-secondary transition-colors">{item.event}</p>
+                        <p className="text-sm text-yellow-200 mt-1">{item.month} {item.date}, 2025</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Monthly Events Timeline */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100"
+          >
+            <div className="bg-gradient-to-r from-secondary via-yellow-500 to-secondary p-8">
+              <h3 className="text-3xl font-bold text-center text-white mb-2">
+                Month-wise Events Timeline
+              </h3>
+              <p className="text-center text-white/90">Major events and celebrations throughout the year</p>
+            </div>
+            
+            <div className="p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                {[
+                  { 
+                    month: 'November', 
+                    color: 'from-orange-500 to-red-500',
+                    events: ['Sammilana (Inter-school)', "Children's Day", 'Karnataka Rajyotsava']
+                  },
+                  { 
+                    month: 'December', 
+                    color: 'from-blue-500 to-indigo-500',
+                    events: ['Samanvaya (Cultural Meet)', 'Christmas', 'Winter Break']
+                  },
+                  { 
+                    month: 'January', 
+                    color: 'from-purple-500 to-pink-500',
+                    events: ['National Youth Day', 'Preparatory Exams', 'Republic Day']
+                  },
+                  { 
+                    month: 'February', 
+                    color: 'from-green-500 to-emerald-500',
+                    events: ['National Science Day', 'Preparatory Exams II', 'Sports Events']
+                  },
+                  { 
+                    month: 'March', 
+                    color: 'from-yellow-500 to-orange-500',
+                    events: ['Annual Exams', 'SSLC Finals', 'Results Day']
+                  },
+                ].map((month, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="group"
+                  >
+                    <div className="bg-gradient-to-br from-gray-50 to-yellow-50 rounded-2xl p-6 hover:shadow-xl transition-all border-2 border-transparent hover:border-secondary/30 h-full">
+                      <div className={`bg-gradient-to-br ${month.color} text-white rounded-xl p-4 mb-4 text-center shadow-lg group-hover:scale-105 transition-transform`}>
+                        <h4 className="font-bold text-lg">{month.month}</h4>
+                      </div>
+                      <ul className="space-y-3">
+                        {month.events.map((event, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-sm text-gray-700 leading-relaxed">{event}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              
+              <div className="mt-8 text-center">
+                <Link
+                  to="/pre-primary/calender"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-secondary to-yellow-600 text-white rounded-full font-bold hover:shadow-xl transition-all hover:scale-105 group"
+                >
+                  View Complete Academic Calendar
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+
             {/* Testimonials Section */}
-            <div className="py-20 bg-white">
+            <div className="py-20 bg-gradient-to-b from-gray-50 to-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -331,11 +542,10 @@ const PrePrimaryHome = () => {
                                     <button
                                         key={idx}
                                         onClick={() => setCurrentTestimonial(idx)}
-                                        className={`h-3 rounded-full transition-all ${
-                                            idx === currentTestimonial
-                                                ? 'bg-primary w-8'
-                                                : 'bg-gray-300 hover:bg-primary/50 w-3'
-                                        }`}
+                                        className={`h-3 rounded-full transition-all ${idx === currentTestimonial
+                                            ? 'bg-primary w-8'
+                                            : 'bg-gray-300 hover:bg-primary/50 w-3'
+                                            }`}
                                         aria-label={`Go to testimonial ${idx + 1}`}
                                     />
                                 ))}
@@ -352,6 +562,8 @@ const PrePrimaryHome = () => {
                     </div>
                 </div>
             </div>
+
+
 
             {/* Quick Links */}
             {/* <div className="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -383,7 +595,9 @@ const PrePrimaryHome = () => {
             </div> */}
 
             {/* CTA Section */}
-            <div className="py-20 bg-gradient-to-r from-primary to-primary/90">
+            {/* <div className="py-20 bg-gradient-to-r from-primary to-primary/90 mb-4">009053 */}
+
+            <div className="py-20 bg-gradient-to-r from-primary to-primary/90 ">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
