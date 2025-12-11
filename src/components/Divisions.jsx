@@ -29,6 +29,16 @@ const divisions = [
         image: primaryImg,
         link: '/scadambi/pre-primary'
     },
+     {
+        id: 'icseprimary',
+        title: 'S Cadambi Vidya Kendra English Secondary School',
+        age: 'Grades 1-5',
+        description: 'Building Values through Education',
+        icon: GraduationCap,
+        color: 'from-red-500 to-red-700',
+        image: collegeImg,
+        link: '/scadambi/icse-primary'
+    },
     {
         id: 'highschool',
         title: 'S.Cadambi Vidya Kendra High School',
@@ -39,16 +49,7 @@ const divisions = [
         image: highschoolImg,
         link: '/scadambi/high-school'
     },
-    {
-        id: 'college',
-        title: 'PU College',
-        age: 'Grades 11-12',
-        description: 'Expert guidance for competitive exams and career excellence.',
-        icon: GraduationCap,
-        color: 'from-red-500 to-red-700',
-        image: collegeImg,
-        link: '/scadambi/pre-school'
-    },
+   
     {
         id: 'sports',
         title: 'Sports Academy',

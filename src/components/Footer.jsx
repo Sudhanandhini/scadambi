@@ -61,10 +61,10 @@ const Footer = () => {
     <ul className="space-y-3">
         {[
              { name: 'SHISHU CHAITANYA-PLAY HOME', link: '/scadambi/play-school' },
-            { name: 'Pre Primary', link: '/scadambi/pre-primary' },
-            { name: 'ICSE PRIMARY WING', link: '/scadambi/icse-primary' },
+            { name: 'S.Cadambi Education Center Pre Primary School', link: '/scadambi/pre-primary' },
+            { name: 'S Cadambi Vidya Kendra English Secondary School', link: '/scadambi/icse-primary' },
             { name: 'ICSE HIGH SCHOOL WING', link: '/scadambi/icse-high' },
-            { name: ' State High School ', link: '/scadambi/high-school' },
+            { name: 'S.Cadambi Vidya Kendra High School ', link: '/scadambi/high-school' },
             { name: 'PU COLLEGE', link: '/scadambi/pu-college' },
         ].map((item) => (
             <li key={item.name}>
