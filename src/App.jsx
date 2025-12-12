@@ -107,7 +107,7 @@ const Layout = ({ children }) => {
 
 function App() {
   return (
-    <Router basename="/scadambi">
+    <Router basename="/scadambi/">
       <ScrollToTopWrapper />
       <Layout>
         <Routes>
