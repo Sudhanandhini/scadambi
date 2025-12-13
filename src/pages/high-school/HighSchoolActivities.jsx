@@ -1,394 +1,286 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Trophy,
-  Users,
-  Sparkles,
-  Palette,
-  Music,
-  Award,
-  Target,
-  Flag,
-  Heart,
-  Globe,
-  BookOpen,
-  Medal
-} from 'lucide-react';
+import { Trophy, Users, Sparkles, Music, Award, Target, Flag, Heart, BookOpen, Leaf, Vote, Globe, Medal, Palette } from 'lucide-react';
+
+
+import img1 from "../../assets/high-school/activity/Picture22.jpg"
+import img2 from "../../assets/high-school/activity/Picture23.jpg"
+
+import img3 from "../../assets/high-school/activity/Picture24.jpg"
+
+import img4 from "../../assets/high-school/activity/Picture26.jpg"
+
+import img5 from "../../assets/high-school/activity/Picture25.jpg"
+
+import img6 from "../../assets/high-school/activity/Picture27.jpg"
+import img7 from "../../assets/high-school/activity/Picture28.jpg"
+import img8 from "../../assets/high-school/activity/Picture29.jpg"
+import img9 from "../../assets/high-school/activity/Picture30.jpg"
+
+import img10 from "../../assets/high-school/activity/Picture31.jpg"
+
+import img11 from "../../assets/high-school/activity/Picture32.jpg"
+
+import img12 from "../../assets/high-school/activity/Picture33.jpg"
+
+import img13 from "../../assets/high-school/activity/Picture34.jpg"
+import img14 from "../../assets/high-school/activity/Picture35.jpg"
+import img15 from "../../assets/high-school/activity/Picture36.jpg"
+
+
+import img16 from "../../assets/high-school/activity/Picture21.jpg"
+
+import img17 from "../../assets/high-school/activity/Picture37.jpg"
+
+import img18 from "../../assets/high-school/activity/Picture371.jpg"
+
+import img19 from "../../assets/high-school/activity/Picture38.jpg"
+import img20 from "../../assets/high-school/activity/Picture39.jpg"
+import img21 from "../../assets/high-school/activity/Picture40.jpg"
+import img22 from "../../assets/high-school/activity/Picture41.jpg"
+
+import img23 from "../../assets/high-school/activity/Picture42.jpg"
+import img24 from "../../assets/high-school/activity/Picture43.jpg"
+import img25 from "../../assets/high-school/activity/Picture44.jpg"
+
+
 
 const HighSchoolActivities = () => {
-  const coActivities = [
+  const activitiesData = [
     {
-      title: 'Scouts & Guides',
-      description: 'Character development through Bharat Scouts and Guides program focusing on self-reliance, discipline, and citizenship',
+      title: 'Orientation Programs',
+      content: 'Special orientation programs conducted to students to create awareness to develop certain skills, knowledge about Moral values, basic communication skills, life skills and ethical values.',
+      images: [img1, img2],
+      icon: BookOpen,
+      align: 'left'
+    },
+    {
+      title: 'Scouts and Guides',
+      content: 'We have Baharat scouts /Guides unit in our school to contribute to the education of young people through a value system based on the Scout/Guide promise and law to build a better world where people are self-fulfilled as individuals and play constructive role in society. The chief aim of scouts /Guides is "character development towards happy citizenship through natural rather than artificial means". Their motto is "Be Prepared".',
+      image: [img6],
       icon: Flag,
-      color: 'blue',
-      motto: 'Be Prepared'
+      align: 'right'
     },
     {
       title: 'Sports Activities',
-      description: 'Comprehensive sports program promoting physical fitness, teamwork, discipline, and mental well-being',
+      content: 'Sports are vital in school education, providing numerous benefits to students. These include physical fitness, health, teamwork, discipline, time management, stress relief, and mental well-being. Participating in sports reduces stress and improves mental health. Our school supports children\'s sports interests by creating a conducive environment for their pursuits.',
+      image: [img7],
       icon: Trophy,
-      color: 'green',
-      motto: 'Healthy Body, Healthy Mind'
+      align: 'left'
     },
     {
-      title: 'Cultural Activities',
-      description: 'Various cultural programs celebrating diversity, creativity, and artistic expression',
+      title: 'Cultural and Literary Activities',
+      content: 'Inaugural and Parents Orientation Program. First Day School Opening ceremonies and cultural programs celebrating diversity, creativity, and artistic expression.',
+      images: [img8, img9],
       icon: Music,
-      color: 'purple',
-      motto: 'Express Yourself'
+      align: 'right'
     },
     {
-      title: 'Science Club',
-      description: 'Hands-on experiments, projects, and competitions to develop scientific temper',
+      title: 'Field Trip',
+      content: 'Field trips and exhibitions to develop scientific temper and hands-on learning experience. The Amateur Manager and Scientist (TAMS) was conducted by PES university. Students participate in interactive science exhibitions, experiments, and innovative project demonstrations to enhance their understanding of scientific concepts and foster curiosity in STEM fields.',
+      image: [img3],
       icon: Target,
-      color: 'red',
-      motto: 'Explore & Discover'
-    }
-  ];
-
-  const competitions = [
-    { name: 'Debate Competition', icon: '🎤' },
-    { name: 'Bhagavad Gita Recitation', icon: '📖' },
-    { name: 'Bharatanatyam', icon: '💃' },
-    { name: 'Drawing Competition', icon: '🎨' },
-    { name: 'Face Painting', icon: '🎭' },
-    { name: 'Pick and Speak', icon: '🎙️' },
-    { name: 'Folk Dance', icon: '🕺' },
-    { name: 'Rangoli', icon: '🎨' },
-    { name: 'Hair Style Making', icon: '💇' },
-    { name: 'Cooking Without Fire', icon: '🍳' },
-    { name: 'Mono Acting', icon: '🎬' },
-    { name: 'Solo Singing', icon: '🎵' },
-    { name: 'Dance', icon: '💃' },
-    { name: 'Vegetable Carving', icon: '🥕' },
-    { name: 'Clay Modeling', icon: '🏺' },
-    { name: 'Garland Making', icon: '🌺' },
-    { name: 'Best Out of Waste', icon: '♻️' }
-  ];
-
-  const events = [
+      align: 'left'
+    },
     {
-      title: 'Annual Sports Day',
-      description: 'Two-day sports festival featuring various athletic competitions',
-      icon: Trophy,
-      month: 'October'
+      title: 'Environment Day',
+      content: 'This Go Green Day is celebrated on June 5th every year to create awareness about the values of mother Earth. Activities include seed ball preparation, drawing competition, and International yoga day - Flex Your Body, Free your Mind.',
+      image: [img10],
+      icon: Leaf,
+      align: 'right'
+    },
+    {
+      title: 'Interclass Competitions',
+      content: 'Rangoli - Colors that Speaks, Patterns that shine. Tattoo making - Tiny Art, Big Impression. Drawing competition - Every stroke speaks a story. Face painting - From Blank face to living Art. Cooking without fire - No Fire, just flavour and Fun.',
+      image: [img11],
+      icon: Sparkles,
+      align: 'left'
+    },
+    {
+      title: 'Polling at Cadambi',
+      content: 'To imbibe leadership qualities at the grass root level, our school has designed the school parliamentary elections every year for High school students. Mock Elections for Guiding Children in Demonstrations.',
+      image: [img12],
+      icon: Vote,
+      align: 'right'
     },
     {
       title: 'Kannada Rajyotsava',
-      description: 'Celebrating Karnataka\'s formation day with cultural programs',
+      content: 'Let\'s celebrate the soul of Karnataka. Cultural programs and celebrations marking Karnataka\'s formation day.',
+      image: [img13],
       icon: Flag,
-      month: 'November'
+      align: 'left'
     },
     {
-      title: 'Children\'s Day',
-      description: 'Special events and activities celebrating childhood',
+      title: 'Singing Competition',
+      content: 'Annual singing competitions to showcase students\' musical talents and build confidence in performing arts.',
+      image: [img14],
+      icon: Music,
+      align: 'right'
+    },
+    {
+      title: 'Teacher\'s Day Celebration by Management',
+      content: 'A teacher take a hand, opens a mind, and touches a heart. Teaching is the one profession that creates all others. The influence of a teacher can never be erased.',
+      image: [img15],
+      icon: Award,
+      align: 'left'
+    },
+    {
+      title: 'Teacher\'s Day Celebration by Students',
+      content: 'To the world, you may just be a teacher. But to me you\'re my hero. The best teacher teaches from the heart, not from the book.',
+      image: [img16],
       icon: Heart,
-      month: 'November'
+      align: 'right'
     },
     {
-      title: 'Sammilana',
-      description: 'Inter-school competition promoting talents',
-      icon: Users,
-      month: 'November'
+      title: 'First day school opening',
+      content: 'The academic year begins with an inspiring inaugural ceremony where students, teachers, and parents gather to mark the commencement of a new learning journey. Special prayers, motivational speeches, and cultural performances set a positive tone for the year ahead, fostering excitement and commitment among students.',
+      image: [img18],
+      icon: BookOpen,
+      align: 'left'
     },
     {
-      title: 'Samanvaya',
-      description: 'Annual cultural fest showcasing student creativity',
-      icon: Sparkles,
-      month: 'December'
-    },
-    {
-      title: 'World Environment Day',
-      description: 'Awareness programs and activities for environmental conservation',
+      title: 'Awareness Programs',
+      content: 'Seed ball preparation by Rotaract Basaveshwara nagar. World Environmental day by Yuvaa Niyoga. Scouts 75th founders day cycle Jatha. BBMP Dengue fever awareness. Cluster sports meet - Kho-Kho, Kabaddi, Volleyball, Throwball. Traffic awareness by police officials.',
+      image: [img17],
       icon: Globe,
-      month: 'June'
-    }
-  ];
+      align: 'right'
+    },
+     {
+      title: ' Science Expo',
+      content: 'Science expo at Ankura for students to develop scientific temper through hands-on learning and interactive exhibitions.',
+      image: [img5],
+      icon: Globe,
+      align: 'left'
+    },
+     {
+      title: 'Celebrations',
+      content: 'We celebrate National mathematics day, world science day, Vivekananda Jayanti, Kargil Diwas, Bhagath Singh birth anniversary and World Sanskrit day to enhance the interest towards various subjects.',
+      image: [img4],
+      icon: Globe,
+      align: 'right'
+    },
+     {
+    title: 'Face Painting',
+    tagline: 'From Blank face to living Art',
+    content: 'Face painting competitions transform students into living canvases where creativity knows no bounds. Participants use colors, brushes, and imagination to create stunning designs ranging from animals and nature to abstract art, developing artistic skills, patience, and attention to detail.',
+    image: [img19],
+    icon: Palette,
+    align: 'left'
+  },
+     {
+    title: 'Best Out of Waste',
+    tagline: 'Innovative today for a Greener Tomorrow',
+    content: 'Students showcase their creativity by transforming discarded materials into useful and artistic items. This eco-friendly competition promotes environmental consciousness, resourcefulness, and sustainable practices while encouraging innovative thinking and artistic expression through recycling and upcycling.',
+    image: [img20],
+    icon: Leaf,
+    align: 'right'
+  },
+  {
+    title: 'Drawing Competition',
+    tagline: 'Every stroke speaks a story',
+    content: 'Annual drawing competitions provide students a platform to express their imagination and artistic talents. Through colors, lines, and creativity, students illustrate their thoughts, emotions, and perspectives on various themes, developing fine motor skills and visual artistic abilities.',
+    image: [img21],
+    icon: Palette,
+    align: 'left'
+  },
+  {
+    title: 'International Yoga Day',
+    tagline: 'Flex Your Body, Free your Mind',
+    content: 'Celebrated on June 21st, International Yoga Day brings together students and teachers to practice various yoga asanas and meditation techniques. This promotes physical fitness, mental peace, stress relief, and overall well-being while teaching students the ancient Indian practice of holistic health.',
+    image: [img22],
+    icon: Heart,
+    align: 'right'
+  },
+  {
+    title: 'Tattoo Making',
+    tagline: 'Tiny Art, Big Impression',
+    content: 'Students explore the art of temporary tattoo design and application, creating intricate patterns and meaningful symbols. This activity enhances artistic precision, design thinking, and cultural appreciation while allowing creative self-expression through body art in a safe, temporary format.',
+    image: [img23],
+    icon: Sparkles,
+    align: 'left'
+  },
+  {
+    title: 'Science Club',
+    tagline: 'Unleashing young minds, one talent at a time',
+    content: 'The Science Club provides a dynamic platform for curious minds to explore scientific concepts beyond textbooks. Through hands-on experiments, innovative projects, science fairs, and collaborative research, students develop analytical thinking, problem-solving skills, and a genuine passion for scientific inquiry and discovery.',
+    image: [img24],
+    icon: Target,
+    align: 'right'
+  },
+ 
+  {
+    title: 'Cooking Without Fire',
+    tagline: 'No Fire, just flavour and Fun',
+    content: 'Students demonstrate culinary creativity by preparing delicious dishes without using heat or fire. This safe, innovative competition teaches food preparation skills, nutrition awareness, hygiene practices, and the art of presentation while encouraging teamwork and following recipes to create healthy, appetizing treats.',
+    image: [img25],
+    icon: Award,
+    align: 'left'
+  }
 
-  const awareness = [
-    {
-      title: 'Quit Tobacco Campaign',
-      description: 'Creating awareness about harmful effects of tobacco',
-      icon: '🚭'
-    },
-    {
-      title: 'Environmental Protection',
-      description: 'Seed ball preparation and Go Green initiatives',
-      icon: '🌱'
-    },
-    {
-      title: 'Traffic Awareness',
-      description: 'Road safety programs by traffic police officials',
-      icon: '🚦'
-    },
-    {
-      title: 'Health Campaigns',
-      description: 'Dengue fever awareness and health education',
-      icon: '🏥'
-    }
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-blue-900 to-primary text-white py-20">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-secondary rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+    <div className="min-h-screen bg-gray-50">
+      <section className="relative bg-gradient-to-br from-[#0F2A4A] via-[#1a4d7a] to-[#0F2A4A] text-white py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#FDB913] opacity-10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-500 opacity-10 rounded-full blur-3xl"></div>
         </div>
-        
         <div className="relative max-w-7xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <Sparkles className="w-16 h-16 mx-auto mb-6 text-secondary" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Activities & Events</h1>
-            <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Beyond academics - nurturing well-rounded personalities
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Co-Curricular Activities */}
-      <section className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Co-Curricular Activities
-            </h2>
-            <div className="w-24 h-1 bg-secondary mx-auto"></div>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {coActivities.map((activity, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border-t-4 border-secondary"
-              >
-                <div className={`w-16 h-16 bg-${activity.color}-100 rounded-full flex items-center justify-center mb-4`}>
-                  <activity.icon className="w-8 h-8 text-secondary" />
-                </div>
-                <h3 className="text-2xl font-bold text-primary mb-3">{activity.title}</h3>
-                <p className="text-gray-700 leading-relaxed mb-4">{activity.description}</p>
-                <div className="inline-block px-4 py-2 bg-yellow-100 text-secondary font-semibold rounded-full text-sm">
-                  {activity.motto}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Competitions */}
-      <section className="py-16 bg-gradient-to-br from-yellow-50 to-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Inter-Class Competitions
-            </h2>
-            <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600">
-              Unleashing young minds, one talent at a time
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {competitions.map((comp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.03 }}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all text-center border-t-4 border-secondary hover:-translate-y-2"
-              >
-                <div className="text-4xl mb-3">{comp.icon}</div>
-                <p className="font-semibold text-primary text-sm">{comp.name}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Annual Events */}
-      <section className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Annual Events
-            </h2>
-            <div className="w-24 h-1 bg-secondary mx-auto"></div>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map((event, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border-l-4 border-secondary"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <event.icon className="w-6 h-6 text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-primary mb-2">{event.title}</h3>
-                    <p className="text-sm text-gray-600 mb-2">{event.description}</p>
-                    <span className="inline-block px-3 py-1 bg-secondary text-white text-xs font-semibold rounded-full">
-                      {event.month}
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Awareness Programs */}
-      <section className="py-16 bg-gradient-to-br from-yellow-50 to-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Awareness Programs
-            </h2>
-            <div className="w-24 h-1 bg-secondary mx-auto"></div>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {awareness.map((program, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all text-center border-t-4 border-secondary"
-              >
-                <div className="text-5xl mb-4">{program.icon}</div>
-                <h3 className="text-lg font-bold text-primary mb-2">{program.title}</h3>
-                <p className="text-sm text-gray-600">{program.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Other Activities */}
-      <section className="py-16 bg-background">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-l-8 border-secondary"
-          >
-            <h2 className="text-3xl font-bold text-primary mb-6">Other Academic Activities</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <Medal className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-primary mb-1">Matematica Examination</h3>
-                    <p className="text-sm text-gray-600">State Level Talent Exam by Karnataka Academy of Mathematics</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <BookOpen className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-primary mb-1">Ramayana & Mahabharata Exams</h3>
-                    <p className="text-sm text-gray-600">Conducted by Bharatha Sanskriti Pratishtan, Bangalore</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Target className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-primary mb-1">TAMS Program</h3>
-                    <p className="text-sm text-gray-600">The Amateur Manager and Scientist by PES University</p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <Flag className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-primary mb-1">Scouts Founders' Day</h3>
-                    <p className="text-sm text-gray-600">75th Founders' Day celebrated through cycle jatha</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Trophy className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-primary mb-1">Cluster Level Sports</h3>
-                    <p className="text-sm text-gray-600">Kho-Kho, Kabaddi, Volleyball, Throwball and Athletics</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Sparkles className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-primary mb-1">Science Expo</h3>
-                    <p className="text-sm text-gray-600">Field trips and exhibitions to develop scientific temper</p>
-                  </div>
-                </div>
-              </div>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-center">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#FDB913] to-green-500 rounded-2xl mb-6 shadow-2xl">
+              <Sparkles className="w-10 h-10 text-white" />
             </div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-[#FDB913] to-green-400 bg-clip-text text-transparent">
+              Activities & Events
+            </h1>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-1 w-16 bg-[#FDB913]"></div>
+              <div className="h-1 w-8 bg-green-500"></div>
+              <div className="h-1 w-16 bg-[#FDB913]"></div>
+            </div>
+            <p className="text-xl text-gray-300">Beyond academics - nurturing well-rounded personalities</p>
           </motion.div>
         </div>
       </section>
 
-      {/* Student Parliament */}
-      <section className="py-16 bg-gradient-to-r from-secondary to-yellow-600 text-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <Users className="w-16 h-16 mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              School Parliamentary Elections
-            </h2>
-            <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
-            <p className="text-xl text-yellow-100 max-w-3xl mx-auto leading-relaxed">
-              To imbibe leadership qualities at the grassroot level, our school designs parliamentary elections 
-              every year for high school students. This democratic process helps students understand civic 
-              responsibility and develop leadership skills.
-            </p>
-          </motion.div>
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 space-y-20">
+          {activitiesData.map((activity, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className={`grid md:grid-cols-2 gap-12 items-center ${activity.align === 'right' ? 'md:grid-flow-dense' : ''}`}
+            >
+              <div className={activity.align === 'right' ? 'md:col-start-2' : ''}>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#FDB913] to-green-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <activity.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#0F2A4A]">{activity.title}</h2>
+                </div>
+                <p className="text-lg text-gray-700 leading-relaxed">{activity.content}</p>
+              </div>
+              
+              <div className={activity.align === 'right' ? 'md:col-start-1 md:row-start-1' : ''}>
+                {activity.image ? (
+                  <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src={activity.image} alt={activity.title} className="w-full h-96 object-contain" />
+                  </div>
+                ) : activity.images ? (
+                  <div className="grid grid-cols-2 gap-4">
+                    {activity.images.map((img, i) => (
+                      <div key={i} className="rounded-xl overflow-hidden shadow-xl border-2 border-gray-100">
+                        <img src={img} alt="" className="w-full h-64 object-contain" />
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
     </div>

@@ -10,17 +10,17 @@ const PrePrimaryFooter = () => {
         { name: 'Facilities', path: '/pre-primary/facilities' },
         { name: 'Activities', path: '/pre-primary/activities' },
         { name: 'News & Events', path: '/pre-primary/news' },
-        {name:'Gallery', path:'/pre-primary/gallery'},
+        { name: 'Gallery', path: '/pre-primary/gallery' },
         { name: 'Contact Us', path: '/pre-primary/contact' }
     ];
 
     const programs = [
-        { name: 'SHISHU CHAITANYA-PLAY HOME', path: '/play-school' },
-            { name: 'Pre Primary', path: '/pre-primary' },
-            { name: 'ICSE PRIMARY WING', path: '/icse-primary' },
-            { name: 'ICSE HIGH SCHOOL WING', path: '/icse-high' },
-            { name: ' State High School ', path: '/high-school' },
-            { name: 'PU COLLEGE', path: '/pu-college' },
+        { name: 'SHISHU CHAITANYA-PLAY HOME', link: '/play-school' },
+        { name: 'S.Cadambi Education Center Pre Primary School', link: '/pre-primary' },
+        { name: 'S Cadambi Vidya Kendra English Secondary School', link: '/icse-primary' },
+        { name: 'S. Cadambi Vidya Kendra English Secondary School', link: '/icse-high' },
+        { name: 'S.Cadambi Vidya Kendra High School ', link: '/high-school' },
+        { name: 'PU COLLEGE', link: '/pu-college' },
     ];
 
     return (
@@ -52,7 +52,7 @@ const PrePrimaryFooter = () => {
                                 <Facebook size={20} />
                             </a>
                         </div>
-                         <Link
+                        <Link
                             to="/"
                             className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg transition-all flex items-center border border-white/20 py-4 my-4"
                         >
@@ -80,22 +80,27 @@ const PrePrimaryFooter = () => {
                     </div>
 
                     {/* Programs */}
+                    {/* Programs */}
                     <div>
                         <h3 className="text-xl font-bold mb-6 text-secondary">Our Divisions</h3>
                         <ul className="space-y-3">
-                            {programs.map((link, idx) => (
+                            {programs.map((item, idx) => (
                                 <li key={idx}>
                                     <Link
-                                        to={link.path}
+                                        to={item.link}
                                         className="flex items-center text-white/90 hover:text-secondary transition-colors group"
                                     >
-                                        <ArrowRight size={16} className="mr-2 group-hover:translate-x-1 transition-transform" />
-                                        {link.name}
+                                        <ArrowRight
+                                            size={16}
+                                            className="mr-2 group-hover:translate-x-1 transition-transform"
+                                        />
+                                        {item.name}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
+
 
                     {/* Contact Info */}
                     <div>

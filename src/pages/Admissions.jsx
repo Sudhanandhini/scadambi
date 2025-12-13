@@ -41,7 +41,7 @@ const Admissions = () => {
                         Join Our Family
                     </h1>
                     <p className="text-gray-600 text-lg">
-                        Admissions open for the academic year 2025-2026. Begin your child's journey to excellence.
+                        Admissions open for the academic year 2026-2027. Begin your child's journey to excellence.
                     </p>
                 </motion.div>
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, ChevronDown, ChevronUp } from 'lucide-react';
 
-const HighSchoolAcademicCalendar = () => {
+const HighSchoolAcademicCalendarAccordion = () => {
   const [expandedMonth, setExpandedMonth] = useState(null);
 
   const academicYear = '2025-2026';
@@ -115,12 +115,13 @@ const HighSchoolAcademicCalendar = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-blue-900 to-primary text-white py-20">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-secondary rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+      <section className="relative bg-gradient-to-br from-[#0F2A4A] via-[#1a4d7a] to-[#0F2A4A] text-white py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#FDB913] opacity-10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-500 opacity-10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/10 rounded-full"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4">
@@ -130,10 +131,23 @@ const HighSchoolAcademicCalendar = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <Calendar className="w-16 h-16 mx-auto mb-6 text-secondary" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Academic Calendar</h1>
-            <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
-            <p className="text-xl text-gray-300">
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+              className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#FDB913] to-green-500 rounded-2xl mb-6 shadow-2xl"
+            >
+              <Calendar className="w-10 h-10 text-white" />
+            </motion.div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-[#FDB913] to-green-400 bg-clip-text text-transparent">
+              Academic Calendar
+            </h1>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-1 w-16 bg-[#FDB913]"></div>
+              <div className="h-1 w-8 bg-green-500"></div>
+              <div className="h-1 w-16 bg-[#FDB913]"></div>
+            </div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Academic Year {academicYear}
             </p>
           </motion.div>
@@ -141,36 +155,47 @@ const HighSchoolAcademicCalendar = () => {
       </section>
 
       {/* Calendar Section */}
-      <section className="py-16 bg-background">
+      <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="space-y-4"
+            className="space-y-6"
           >
             {monthlyEvents.map((monthData, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden border-l-4 border-secondary"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden border-2 border-gray-100"
               >
                 {/* Month Header */}
                 <button
                   onClick={() => toggleMonth(monthData.month)}
-                  className="w-full px-6 py-4 flex items-center justify-between bg-gradient-to-r from-yellow-50 to-white hover:from-yellow-100 hover:to-yellow-50 transition-all"
+                  className="w-full px-8 py-6 flex items-center justify-between bg-gradient-to-r from-gray-50 to-white hover:from-[#FDB913]/10 hover:to-green-50 transition-all group"
                 >
-                  <div className="flex items-center gap-3">
-                    <Calendar className="w-6 h-6 text-secondary" />
-                    <h2 className="text-2xl font-bold text-primary">{monthData.month}</h2>
-                    <span className="px-3 py-1 bg-secondary text-white text-sm font-semibold rounded-full">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#FDB913] to-green-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Calendar className="w-6 h-6 text-white" />
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#0F2A4A]">{monthData.month}</h2>
+                    <span className="px-4 py-2 bg-gradient-to-r from-[#FDB913] to-green-500 text-white text-sm font-bold rounded-full shadow-lg">
                       {monthData.events.length} Events
                     </span>
                   </div>
-                  {expandedMonth === monthData.month ? (
-                    <ChevronUp className="w-6 h-6 text-secondary" />
-                  ) : (
-                    <ChevronDown className="w-6 h-6 text-secondary" />
-                  )}
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-gray-500 hidden sm:block">
+                      {expandedMonth === monthData.month ? 'Click to collapse' : 'Click to expand'}
+                    </span>
+                    {expandedMonth === monthData.month ? (
+                      <ChevronUp className="w-7 h-7 text-[#FDB913]" />
+                    ) : (
+                      <ChevronDown className="w-7 h-7 text-green-500" />
+                    )}
+                  </div>
                 </button>
 
                 {/* Events List */}
@@ -180,81 +205,103 @@ const HighSchoolAcademicCalendar = () => {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="border-t border-gray-200"
+                    className="border-t-2 border-gray-100"
                   >
-                    <div className="p-6 space-y-4">
+                    <div className="p-8 space-y-4 bg-gradient-to-br from-gray-50 to-white">
                       {monthData.events.map((event, idx) => (
-                        <div
+                        <motion.div
                           key={idx}
-                          className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg hover:bg-yellow-50 transition-colors"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.05 }}
+                          className="flex items-start gap-6 p-6 bg-white rounded-xl hover:bg-gradient-to-r hover:from-[#FDB913]/5 hover:to-green-50 transition-all shadow-md hover:shadow-lg border-2 border-gray-100 hover:border-[#FDB913]/30"
                         >
                           <div className="flex-shrink-0 text-center">
-                            <div className="w-16 h-16 bg-secondary text-white rounded-lg flex flex-col items-center justify-center">
+                            <div className="w-20 h-20 bg-gradient-to-br from-[#0F2A4A] to-[#1a4d7a] text-white rounded-xl flex flex-col items-center justify-center shadow-lg">
                               <span className="text-2xl font-bold">
                                 {event.date.split('-')[0] || '?'}
                               </span>
-                              <span className="text-xs">{event.day}</span>
+                              <span className="text-xs mt-1 text-gray-300">{event.day}</span>
                             </div>
                           </div>
                           <div className="flex-1">
-                            <h3 className="text-lg font-bold text-primary mb-1">
+                            <h3 className="text-xl font-bold text-[#0F2A4A] mb-2 leading-tight">
                               {event.event}
                             </h3>
                             {event.committee && (
-                              <p className="text-sm text-gray-600">
-                                <span className="font-semibold">Committee:</span> {event.committee}
-                              </p>
+                              <div className="flex items-center gap-2 mb-2">
+                                <span className="px-3 py-1 bg-green-100 text-green-700 text-sm font-semibold rounded-full">
+                                  {event.committee}
+                                </span>
+                              </div>
                             )}
-                            <p className="text-sm text-gray-500 mt-1">
-                              {event.date}
+                            <p className="text-sm text-gray-500 font-medium">
+                              📅 {event.date}
                             </p>
                           </div>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
                   </motion.div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
       {/* Competitions Note */}
-      <section className="py-16 bg-gradient-to-r from-secondary to-yellow-600 text-white">
-        <div className="max-w-6xl mx-auto px-4">
+      <section className="py-20 bg-gradient-to-br from-[#0F2A4A] via-[#1a4d7a] to-[#0F2A4A] text-white">
+        <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold mb-6">Talent Week Competitions</h2>
-            <p className="text-xl text-yellow-100 mb-8">
+            <span className="inline-block px-6 py-2 bg-white/20 text-white rounded-full text-sm font-semibold mb-4">
+              August Special
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Talent Week Competitions</h2>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-1 w-16 bg-[#FDB913]"></div>
+              <div className="h-1 w-8 bg-green-500"></div>
+              <div className="h-1 w-16 bg-[#FDB913]"></div>
+            </div>
+            <p className="text-xl text-gray-300 mb-12">
               During August, we organize various inter-class competitions including:
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-lg">
-              {['Debate', 'Bhagavad Gita Recitation', 'Drawing', 'Face Painting', 'Folk Dance', 'Rangoli', 'Solo Singing', 'Dance', 'Clay Modeling', 'Best Out of Waste', 'Vegetable Carving', 'Cooking Without Fire'].map((comp, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
-                  {comp}
-                </div>
-              ))}
-            </div>
           </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {['Debate', 'Bhagavad Gita Recitation', 'Drawing', 'Face Painting', 'Folk Dance', 'Rangoli', 'Solo Singing', 'Dance', 'Clay Modeling', 'Best Out of Waste', 'Vegetable Carving', 'Cooking Without Fire'].map((comp, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="bg-white/10 backdrop-blur-lg rounded-xl p-4 text-center hover:bg-white/20 transition-all border border-white/20 font-semibold"
+              >
+                {comp}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Important Note */}
-      <section className="py-16 bg-background">
+      <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center border-t-4 border-secondary"
+            className="bg-gradient-to-r from-[#FDB913] to-[#FDB913] rounded-3xl shadow-2xl p-12 md:p-16 text-white text-center"
           >
-            <h2 className="text-2xl font-bold text-primary mb-4">Important Note</h2>
-            <p className="text-gray-700 text-lg max-w-3xl mx-auto">
+            <Calendar className="w-16 h-16 mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Important Note</h2>
+            <p className="text-xl leading-relaxed max-w-3xl mx-auto">
               Dates are tentative and subject to change. Parents and students will be notified 
               in advance about any modifications to the calendar. Please check regularly for updates.
             </p>
@@ -265,4 +312,4 @@ const HighSchoolAcademicCalendar = () => {
   );
 };
 
-export default HighSchoolAcademicCalendar;
+export default HighSchoolAcademicCalendarAccordion;

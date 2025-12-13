@@ -125,12 +125,7 @@ const HighSchoolHeader = () => {
                   )}
                 </div>
               ))}
-              <Link
-                to="/high-school/admissions"
-                className="ml-4 px-6 py-2 bg-secondary text-white rounded-full font-semibold hover:bg-yellow-600 transition-all hover:shadow-lg"
-              >
-                Enroll Now
-              </Link>
+              
             </nav>
 
             {/* Mobile Menu Button */}

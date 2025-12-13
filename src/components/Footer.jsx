@@ -63,7 +63,7 @@ const Footer = () => {
              { name: 'SHISHU CHAITANYA-PLAY HOME', link: '/scadambi/play-school' },
             { name: 'S.Cadambi Education Center Pre Primary School', link: '/scadambi/pre-primary' },
             { name: 'S Cadambi Vidya Kendra English Secondary School', link: '/scadambi/icse-primary' },
-            { name: 'ICSE HIGH SCHOOL WING', link: '/scadambi/icse-high' },
+            { name: 'S. Cadambi Vidya Kendra English Secondary School', link: '/scadambi/icse-high' },
             { name: 'S.Cadambi Vidya Kendra High School ', link: '/scadambi/high-school' },
             { name: 'PU COLLEGE', link: '/scadambi/pu-college' },
         ].map((item) => (
@@ -108,7 +108,7 @@ const Footer = () => {
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80">
 
                         <p className="flex items-center">
-                            © 2025 S. Cadambi Pre-Primary Wing. All rights reserved.
+                            © 2025 S. Cadambi Wing. All rights reserved.
                         </p>
 
                         <div className="flex items-center space-x-6">

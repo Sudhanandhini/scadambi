@@ -15,10 +15,20 @@ import {
   Calendar
 } from 'lucide-react';
 
+
+import img1 from "../../assets/images/division_preschool.png"
+import img2 from "../../assets/images/division_primary.png"
+import img3 from "../../assets/images/about_students.png"
+
+
+
+
+
+
 const HighSchoolHome = () => {
   const stats = [
-    { icon: GraduationCap, label: 'Years of Excellence', value: '40+' },
-    { icon: Users, label: 'Total Students', value: '2000+' },
+    { icon: GraduationCap, label: 'Years of Excellence', value: '43+' },
+    { icon: Users, label: 'Total Students', value: '4000+' },
     { icon: Trophy, label: 'Awards Won', value: '50+' },
     { icon: BookOpen, label: 'Quality Education', value: '100%' },
   ];
@@ -194,7 +204,7 @@ const HighSchoolHome = () => {
               {/* Main big image */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&h=900&fit=crop"
+                  src={img1}
                   alt="Students on campus"
                   className="w-full h-[260px] md:h-[380px] lg:h-[420px] object-cover"
                 />
@@ -203,7 +213,7 @@ const HighSchoolHome = () => {
               {/* Small image overlapping bottom-right */}
               <div className="absolute -bottom-16 right-6 md:right-10 w-52 md:w-64 rounded-3xl overflow-hidden shadow-2xl border-8 border-white bg-white">
                 <img
-                  src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&h=900&fit=crop"
+                  src={img2}
                   alt="Campus life"
                   className="w-full h-[220px] md:h-[260px] object-cover"
                 />
@@ -231,7 +241,7 @@ const HighSchoolHome = () => {
               {/* Vertical EST text – like in the design */}
               <div className="absolute top-0 -left-10 hidden xl:block">
                 <div
-                  className="text-6xl font-bold text-gray-200 tracking-[0.2em]"
+                  className="text-6xl font-bold text-[#0F2A4A] tracking-[0.2em]"
                   style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
                 >
                   EST 1984
@@ -411,9 +421,9 @@ const HighSchoolHome = () => {
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&h=900&fit=crop"
+                  src={img3}
                   alt="Students on campus"
-                  className="w-full h-[260px] md:h-[380px] lg:h-[430px] object-cover"
+                  className="w-full h-[360px] md:h-[480px] lg:h-[600px] object-cover"
                 />
               </div>
             </motion.div>

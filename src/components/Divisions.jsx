@@ -52,13 +52,13 @@ const divisions = [
    
     {
         id: 'sports',
-        title: 'Sports Academy',
+        title: 'S. Cadambi Vidya Kendra English Secondary School [ICSE]',
         age: 'All Ages',
-        description: 'Developing physical fitness, teamwork, and sportsmanship through world-class coaching.',
+        description: 'We kindle imagination, ignite inquiry, Foster accomplishment ',
         icon: Trophy,
         color: 'from-yellow-400 to-yellow-600',
         image: sportsImg,
-        link: '/scadambi/pre-school'
+        link: '/scadambi/icse-high'
     },
     {
         id: 'arts',
