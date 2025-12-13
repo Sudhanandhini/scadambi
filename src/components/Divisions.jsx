@@ -11,13 +11,13 @@ import sportsImg from '../assets/images/division_sports.png';
 const divisions = [
     {
         id: 'preschool',
-        title: 'Pre-School',
+        title: 'S. Cadambi Shishu Chaitanya',
         age: 'Ages 2-5',
-        description: 'Sparking curiosity through play-based learning in a nurturing environment.',
+        description: 'Inspiring little learners everyday',
         icon: Baby,
         color: 'from-blue-400 to-blue-600',
         image: preschoolImg,
-        link: '/scadambi/pre-school'
+        link: '/scadambi/play-school'
     },
     {
         id: 'primary',
@@ -62,13 +62,13 @@ const divisions = [
     },
     {
         id: 'arts',
-        title: 'Creative Arts',
+        title: 'S Cadambi Independent PU College',
         age: 'All Ages',
-        description: 'Unleashing creativity through music, dance, visual arts, and drama.',
+        description: 'Development through the application of knowledge.',
         icon: Palette,
         color: 'from-purple-400 to-purple-600',
         image: 'https://images.unsplash.com/photo-1460661619275-dbea996984c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        link: '/scadambi/pre-school'
+        link: '/scadambi/pu-college'
     }
 ];
 

@@ -631,6 +631,9 @@ const HighSchoolHome = () => {
         </div>
       </section>
 
+
+      
+
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-secondary to-yellow-600 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">

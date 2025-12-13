@@ -15,12 +15,12 @@ const PrePrimaryFooter = () => {
     ];
 
     const programs = [
-        { name: 'SHISHU CHAITANYA-PLAY HOME', link: '/play-school' },
+        { name: 'S. Cadambi Shishu Chaitanya', link: '/play-school' },
         { name: 'S.Cadambi Education Center Pre Primary School', link: '/pre-primary' },
         { name: 'S Cadambi Vidya Kendra English Secondary School', link: '/icse-primary' },
-        { name: 'S. Cadambi Vidya Kendra English Secondary School', link: '/icse-high' },
+        { name: 'S. Cadambi Vidya Kendra English Secondary School-[ICSE]', link: '/icse-high' },
         { name: 'S.Cadambi Vidya Kendra High School ', link: '/high-school' },
-        { name: 'PU COLLEGE', link: '/pu-college' },
+        { name: 'S Cadambi Independent PU College', link: '/pu-college' },
     ];
 
     return (

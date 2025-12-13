@@ -13,9 +13,17 @@ import PrePrimaryFooter from './pages/pre-primary/PrePrimaryFooter';
 import IcsePrimaryHeader from './pages/icse-primary/IcsePrimaryHeader';
 import IcsePrimaryFooter from './pages/icse-primary/IcsePrimaryFooter';
 
+// ICSE HIGH Components
+import IcseHighHeader from './pages/icse-high/IcseHighHeader';
+import IcseHighFooter from './pages/icse-high/IcseHighFooter';
+
 // HIGH SCHOOL Components
 import HighSchoolHeader from './pages/high-school/HighSchoolHeader';
 import HighSchoolFooter from './pages/high-school/HighSchoolFooter';
+
+// PU COLLEGE Components
+import PuCollegeHeader from './pages/pu-college/PuCollegeHeader';
+import PuCollegeFooter from './pages/pu-college/PuCollegeFooter';
 
 // MAIN WEBSITE Pages
 import Home from './pages/Home';
@@ -56,6 +64,15 @@ import IcsePrimaryGallery from './pages/icse-primary/IcsePrimaryGallery';
 import IcsePrimaryNews from './pages/icse-primary/IcsePrimaryNews';
 import IcsePrimaryContact from './pages/icse-primary/IcsePrimaryContact';
 
+// ICSE HIGH Pages
+import IcseHighHome from './pages/icse-high/IcseHighHome';
+import IcseHighAbout from './pages/icse-high/IcseHighAbout';
+import IcseHighAcademic from './pages/icse-high/IcseHighAcademic';
+import IcseHighAdmissions from './pages/icse-high/IcseHighAdmissions';
+import IcseHighFacilities from './pages/icse-high/IcseHighFacilities';
+import IcseHighContact from './pages/icse-high/IcseHighContact';
+import IcseHighSchoolTimings from './pages/icse-high/IcseHighSchoolTimings';
+
 // HIGH SCHOOL Pages
 import HighSchoolHome from './pages/high-school/HighSchoolHome';
 import HighSchoolAbout from './pages/high-school/HighSchoolAbout';
@@ -67,7 +84,15 @@ import HighSchoolContact from './pages/high-school/HighSchoolContact';
 import HighSchoolSchoolTimings from './pages/high-school/HighSchoolSchoolTimings';
 import HighSchoolAcademicCalendar from './pages/high-school/HighSchoolAcademicCalendar';
 
-// Simple ScrollToTop component to reset scroll on route change
+// PU COLLEGE Pages
+import PuCollegeHome from './pages/pu-college/PuCollegeHome';
+import PuCollegeAbout from './pages/pu-college/PuCollegeAbout';
+import PuCollegeAcademic from './pages/pu-college/PuCollegeAcademic';
+import PuCollegeAdmissions from './pages/pu-college/PuCollegeAdmissions';
+import PuCollegeFacilities from './pages/pu-college/PuCollegeFacilities';
+import PuCollegeContact from './pages/pu-college/PuCollegeContact';
+import IcseHighActivities from './pages/icse-high/IcseHighActivities';
+
 const ScrollToTopWrapper = () => {
   const { pathname } = useLocation();
   React.useEffect(() => {
@@ -76,30 +101,30 @@ const ScrollToTopWrapper = () => {
   return null;
 };
 
-// Layout wrapper that switches between main, pre-primary, icse-primary, and high-school layouts
 const Layout = ({ children }) => {
   const location = useLocation();
   const isPrePrimary = location.pathname.startsWith('/pre-primary');
   const isIcsePrimary = location.pathname.startsWith('/icse-primary');
+  const isIcseHigh = location.pathname.startsWith('/icse-high');
   const isHighSchool = location.pathname.startsWith('/high-school');
+  const isPuCollege = location.pathname.startsWith('/pu-college');
 
   return (
     <div className="min-h-screen bg-background font-sans text-text selection:bg-secondary selection:text-primary">
-      {/* Show appropriate header based on route */}
       {isPrePrimary ? <PrePrimaryHeader /> : 
        isIcsePrimary ? <IcsePrimaryHeader /> :
-       isHighSchool ? <HighSchoolHeader /> : 
+       isIcseHigh ? <IcseHighHeader /> :
+       isHighSchool ? <HighSchoolHeader /> :
+       isPuCollege ? <PuCollegeHeader /> :
        <Navbar />}
       
-      {/* Page content */}
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
       
-      {/* Show appropriate footer based on route */}
       {isPrePrimary ? <PrePrimaryFooter /> : 
        isIcsePrimary ? <IcsePrimaryFooter /> :
-       isHighSchool ? <HighSchoolFooter /> : 
+       isIcseHigh ? <IcseHighFooter /> :
+       isHighSchool ? <HighSchoolFooter /> :
+       isPuCollege ? <PuCollegeFooter /> :
        <Footer />}
     </div>
   );
@@ -151,6 +176,16 @@ function App() {
           <Route path="/icse-primary/news" element={<IcsePrimaryNews />} />
           <Route path="/icse-primary/contact" element={<IcsePrimaryContact />} />
 
+          {/* ICSE HIGH SECTION ROUTES */}
+          <Route path="/icse-high" element={<IcseHighHome />} />
+          <Route path="/icse-high/about" element={<IcseHighAbout />} />
+          <Route path="/icse-high/academic" element={<IcseHighAcademic />} />
+          <Route path="/icse-high/admissions" element={<IcseHighAdmissions />} />
+          <Route path="/icse-high/facilities" element={<IcseHighFacilities />} />
+          <Route path="/icse-high/timings" element={<IcseHighSchoolTimings />} />
+          <Route path="/icse-high/activites" element={<IcseHighActivities />} />
+          <Route path="/icse-high/contact" element={<IcseHighContact />} />
+
           {/* HIGH SCHOOL SECTION ROUTES */}
           <Route path="/high-school" element={<HighSchoolHome />} />
           <Route path="/high-school/about" element={<HighSchoolAbout />} />
@@ -161,6 +196,14 @@ function App() {
           <Route path="/high-school/contact" element={<HighSchoolContact />} />
           <Route path="/high-school/schooltime" element={<HighSchoolSchoolTimings />} />
           <Route path="/high-school/calender" element={<HighSchoolAcademicCalendar />} />
+
+          {/* PU COLLEGE SECTION ROUTES */}
+          <Route path="/pu-college" element={<PuCollegeHome />} />
+          <Route path="/pu-college/about" element={<PuCollegeAbout />} />
+          <Route path="/pu-college/academic" element={<PuCollegeAcademic />} />
+          <Route path="/pu-college/admissions" element={<PuCollegeAdmissions />} />
+          <Route path="/pu-college/facilities" element={<PuCollegeFacilities />} />
+          <Route path="/pu-college/contact" element={<PuCollegeContact />} />
         </Routes>
       </Layout>
     </Router>
