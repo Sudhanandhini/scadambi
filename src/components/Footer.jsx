@@ -60,12 +60,12 @@ const Footer = () => {
 
     <ul className="space-y-3">
         {[
-             { name: 'SHISHU CHAITANYA-PLAY HOME', link: '/scadambi/play-school' },
+             { name: 'S. Cadambi Shishu Chaitanya', link: '/scadambi/play-school' },
             { name: 'S.Cadambi Education Center Pre Primary School', link: '/scadambi/pre-primary' },
             { name: 'S Cadambi Vidya Kendra English Secondary School', link: '/scadambi/icse-primary' },
             { name: 'S. Cadambi Vidya Kendra English Secondary School-[ICSE]', link: '/scadambi/icse-high' },
             { name: 'S.Cadambi Vidya Kendra High School ', link: '/scadambi/high-school' },
-            { name: 'S.Cadambi Vidya Kendra High School', link: '/scadambi/pu-college' },
+            { name: 'S Cadambi Independent PU College', link: '/scadambi/pu-college' },
         ].map((item) => (
             <li key={item.name}>
                 <a 
